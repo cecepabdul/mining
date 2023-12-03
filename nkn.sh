@@ -1,4 +1,5 @@
-#
+#!/bin/bash
+
 mkdir nkn && cd nkn
 
 #
