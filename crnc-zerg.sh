@@ -14,7 +14,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer-sse2 -a yespowerltncg -o stratum+tcp://yespowerLTNCG.mine.zergpool.com:6239 -u  TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=CRNC/LNCR"
+ExecStart=/root/cpuminer-sse2 -a yespowerltncg -o stratum+tcp://yespowerLTNCG.mine.zergpool.com:6239 -u  TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=CRNC/LNCR
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
