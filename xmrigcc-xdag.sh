@@ -15,7 +15,7 @@ Description=xmrigcc-xdagt Service
 After=network.target
 
 [Service]
-ExecStart=/root/xmrigcc/xmrigDaemon -a rx/xdag -o 185.106.178.67:23654 -u Lv6RAnXsKrNfZTqbhsx3gXddnbmzicfud -p c -k --cc-url=172.111.10.111:3344 --cc-access-token=Cecepabdul67 --cc-worker-id=cloud
+ExecStart=/root/xmrigcc/xmrigDaemon -a rx/xdag -o 172.111.10.111:3333 -u Lv6RAnXsKrNfZTqbhsx3gXddnbmzicfud -p c -k --cc-url=172.111.10.111:3344 --cc-access-token=Cecepabdul67
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
