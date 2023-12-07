@@ -7,7 +7,7 @@ if [ ! -d "/root/xdag/xmrig-4-xdag" ]; then
     cd /root/xdag
     wget https://github.com/cecepabdul/mining/releases/download/xdag/config.json
     wget https://github.com/cecepabdul/mining/releases/download/xdag/xmrig-4-xdag
-    
+    chmod +x xmrig-4-xdag
 fi
 
 # Step 2: 
@@ -17,7 +17,6 @@ Description=xdag Service
 After=network.target
 
 [Service]
-ExecStartPre=/bin/chmod +x /root/xdag/xmrig-4-xdag
 ExecStart=/root/xdag/xmrig-4-xdag
 WorkingDirectory=/root
 Restart=always
