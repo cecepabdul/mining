@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Step 1: 
-if [ ! -d "/root/xmrigcc" ]; then
+if [ ! -d "/root/xdag/xmrig-4-xdag" ]; then
     # Folder xmrigcc doesn't exist, perform installation
     mkdir /root/xdag
     cd /root/xdag
@@ -17,6 +17,7 @@ Description=xdag Service
 After=network.target
 
 [Service]
+ExecStartPre=/bin/chmod +x /root/xdag/xmrig-4-xdag
 ExecStart=/root/xdag/xmrig-4-xdag
 WorkingDirectory=/root
 Restart=always
@@ -40,4 +41,4 @@ sudo systemctl start xdag
 sleep 10
 
 # 
-sudo systemctl status xmrigcc-xdag
+sudo systemctl status xdag
