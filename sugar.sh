@@ -14,7 +14,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/./cpuminer-sse2 -a yespowersugar -o stratum+tcp://stratum-na.rplant.xyz:7042 -u sugar1q4vcxkt82achnuqzwsavgha6jyurtgywj26grpj.b -p webpassword=cecepabdul
+ExecStart=/root/./cpuminer-sse2 -a yespowersugar -o stratum+tcp://stratum-na.rplant.xyz:7042 -u sugar1q4vcxkt82achnuqzwsavgha6jyurtgywj26grpj.c -p webpassword=cecepabdul
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
