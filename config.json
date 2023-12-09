@@ -60,7 +60,7 @@
         {
             "algo": "rx/xdag",
             "coin": null,
-            "url": "172.111.10.111:3232",
+            "url": "proxy.xdag.eu:3333",
             "user": "Lv6RAnXsKrNfZTqbhsx3gXddnbmzicfud",
             "pass": "x",
             "rig-id": null,
