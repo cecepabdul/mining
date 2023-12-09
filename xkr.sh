@@ -26,7 +26,7 @@ WantedBy=multi-user.target
 EOF
 
 # Step 3: 
-sudo chmod 644 /etc/systemd/system/xmrigcc-xdag.service
+sudo chmod 644 /etc/systemd/system/xkr.service
 
 # Step 4:
 sudo systemctl daemon-reload
