@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 
-if [ ! -f "/root/xmrig-6.7.0/xmrig" ]; then
+if [ ! -f "/root/xmrig-6.21.0/xmrig" ]; then
     # File xmrig tidak ada, lakukan download dan ekstraksi
-    wget https://github.com/xmrig/xmrig/releases/download/v6.7.0/xmrig-6.7.0-linux-x64.tar.gz
-    tar -xvf xmrig-6.7.0-linux-x64.tar.gz
+    wget https://github.com/xmrig/xmrig/releases/download/v6.21.0/xmrig-6.21.0-linux-x64.tar.gz
+    tar -xvf xmrig-6.21.0-linux-x64.tar.gz
 fi
 
 # 
@@ -14,7 +14,7 @@ Description=XMRig Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig -k -a ghostrider --donate-level 1 -o us-east01.miningrigrentals.com:51586 -u cecepabdul67.281058 -p x"
+ExecStart=/bin/bash -c "cd /root/xmrig-6.21.0 && ./xmrig -k -a ghostrider --donate-level 1 -o us-east01.miningrigrentals.com:51586 -u cecepabdul67.281058 -p x"
 WorkingDirectory=/root/xmrig-6.7.0
 Restart=always
 RestartSec=3
