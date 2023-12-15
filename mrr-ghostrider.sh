@@ -14,7 +14,7 @@ Description=XMRig Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root/xmrig-6.21.0/xmrig -k -a ghostrider --donate-level 1 -o us-east01.miningrigrentals.com:51586 -u cecepabdul67.281058 -p x"
+ExecStart=/bin/bash -c "cd /root/xmrig-6.21.0 && ./xmrig -k -a ghostrider --donate-level 1 -o us-east01.miningrigrentals.com:51586 -u cecepabdul67.281058 -p x"
 WorkingDirectory=/root/xmrig-6.21.0
 Restart=always
 RestartSec=3
