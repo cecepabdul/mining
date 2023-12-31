@@ -14,7 +14,7 @@ Description=XMRig Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig -k -a rx/sfx --donate-level 1 -o us.fastpool.xyz:3034 -u Safex61Jc9684fqa4ThEuuXntyTrXKCj9WnaGVgsCgFHMepkMUgRAt6DxGTok35kvU3UCjch2g17HVenvsDwxjdET1ciehJaJuW4L@c -p x"
+ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig -k -a rx/sfx --donate-level 1 -o sf.pool-pay.com:4026 -u SafexsoxtaMfjjELEpfNrPQfBjMJvKWji4PhEoyBpffve3EgUwsN7qARsiXjXoRsbsCWJVy488Qkt56G6NDZDcMLLo1koyfFVqo3z -p x@c"
 WorkingDirectory=/root/xmrig-6.7.0
 Restart=always
 RestartSec=3
