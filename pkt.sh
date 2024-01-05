@@ -14,7 +14,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=/bin/bash -c "cd /root && chmod +x ./packetcrypt-v0.5.2-linux_amd64 && ./packetcrypt-v0.5.2-linux_amd64 ann -p pkt1qn8mrx2et6y7u3lv5aejjl7725qt88zyfv5egpf https://stratum.zetahash.com http://pool.pkt.world"
+ExecStart=/bin/bash -c "cd /root && chmod +x ./packetcrypt && ./packetcrypt ann -p pkt1qn8mrx2et6y7u3lv5aejjl7725qt88zyfv5egpf https://stratum.zetahash.com http://pool.pkt.world"
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
