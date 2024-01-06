@@ -15,7 +15,7 @@ Description=xmrigcc-xkr Service
 After=network.target
 
 [Service]
-ExecStart=/root/xmrigcc/xmrigDaemon -a cn-pico -o privacymine.net:5555 -u SEKReV1jVbX6iQX1CJ2GHgKzktJug8j9K9omRYHiJMpmJyhtrdPbGaA8V5i9mSRQZTKpV8RH9moPeV2uqa5VX5JPRP5y8kncrcg+c -p c -k --cc-url=172.111.10.111:3344 --cc-access-token=Cecepabdul67 --donate-level=1
+ExecStart=/root/xmrigcc/xmrigDaemon -a cn-pico -o xkr.pool-pay.com:5387 -u SEKReV1jVbX6iQX1CJ2GHgKzktJug8j9K9omRYHiJMpmJyhtrdPbGaA8V5i9mSRQZTKpV8RH9moPeV2uqa5VX5JPRP5y8kncrcg -p @c -k --donate-level=1
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
