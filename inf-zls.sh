@@ -8,7 +8,7 @@ if [ ! -f "/root/xmrig-6.7.0/xmrig" ]; then
 fi
 
 # 
-sudo tee /etc/systemd/system/inf.service <<EOF
+sudo tee /etc/systemd/system/inf-zls.service <<EOF
 [Unit]
 Description=XMRig Service
 After=network.target
