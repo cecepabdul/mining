@@ -2,14 +2,10 @@
 
 # Step 1: 
 
-apt-get update -y
-apt-get install libssl-dev libssl3 -y
-cp -rf /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libcrypto.so.3
-ldconfig
-
-if [ ! -f "/root/cpuminer" ]; then
+if [ ! -f "/root/cpuminer-opt-aurum/cpuminer" ]; then
     # File cpuminer doesn't exist, perform installation
-    wget https://github.com/cecepabdul/mining/releases/download/xdag/cpuminer
+    git clone https://github.com/bitnet-io/cpuminer-opt-aurum.git
+    cd cpuminer-opt-aurum && bash build.sh
 fi
 
 # Step 2: 
@@ -19,7 +15,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer -a aurum -o stratum+tcp://bnomp.io:3333 -u bit1qm29v8gdsmgh5yramd5ql6nj5mtz4gm48869my9 -p c
+ExecStart=/root/cpuminer-opt-aurum/cpuminer -a aurum -o stratum+tcp://bnomp.io:3333 -u bit1qm29v8gdsmgh5yramd5ql6nj5mtz4gm48869my9 -p c
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
