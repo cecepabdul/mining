@@ -11,7 +11,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer -a aurum -o stratum+tcp://aurum.na.mine.zergpool.com:6434 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=BIT,m=solo
+ExecStart=/root/cpuminer-opt-aurum/cpuminer -a aurum -o stratum+tcp://aurum.na.mine.zergpool.com:6434 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=BIT,m=solo
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
