@@ -11,7 +11,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer-opt-aurum/cpuminer -a aurum -o stratum+tcp://cpu.anomp.cc:11161 -u bit1qm29v8gdsmgh5yramd5ql6nj5mtz4gm48869my9 -p c
+ExecStart=/root/cpuminer-opt-aurum/cpuminer -a aurum -o ./cpuminer -a aurum -o stratum+tcp://cpu.anomp.cc:11161 -u bit1qm29v8gdsmgh5yramd5ql6nj5mtz4gm48869my9 -p c
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
