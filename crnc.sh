@@ -8,13 +8,13 @@ if [ ! -f "/root/cpuminer-sse2" ]; then
 fi
 
 # Step 2: 
-sudo tee /etc/systemd/system/crnc-zerg.service <<EOF
+sudo tee /etc/systemd/system/crnc.service <<EOF
 [Unit]
 Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer-sse2 -a yespowerltncg -o stratum+tcp://yespowerLTNCG.mine.zergpool.com:6239 -u  TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=CRNC/LNCR
+ExecStart=/root/cpuminer-sse2 -a yespowerltncg -o us.mining4people.com:4170 -u KPUATJhsGzZXf6CzvZ1JQ7B6c9fE7SRc9A.c -p x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
@@ -25,16 +25,16 @@ WantedBy=multi-user.target
 EOF
 
 # Step 3: 
-sudo chmod 644 /etc/systemd/system/crnc-zerg.service
+sudo chmod 644 /etc/systemd/system/crncservice
 
 # Step 4:
 sudo systemctl daemon-reload
 
 # Step 5: 
-sudo systemctl start crnc-zerg
+sudo systemctl start crnc
 
 # Wait for 10 seconds
 sleep 10
 
 # 
-sudo systemctl status crnc-zerg
+sudo systemctl status crnc
