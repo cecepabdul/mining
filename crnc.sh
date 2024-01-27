@@ -25,7 +25,7 @@ WantedBy=multi-user.target
 EOF
 
 # Step 3: 
-sudo chmod 644 /etc/systemd/system/crncservice
+sudo chmod 644 /etc/systemd/system/crnc.service
 
 # Step 4:
 sudo systemctl daemon-reload
