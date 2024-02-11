@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir aioz
 cd aioz
 #
