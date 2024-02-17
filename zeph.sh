@@ -14,7 +14,7 @@ Description=XMRig Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig -k -a rx/0 --donate-level 1 -o us.zephyr.herominers.com:1123 -u ZEPHs6tQo1pCLAWEbVs65DckQpLAigrmTafut3niQZ7EAkrXxvZPnYeDc65pc6PPBxjmqNdh6HtYHeT8mD7eXgTvG8tGhSkmxRH -p b"
+ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig -k -a rx/0 --donate-level 1 -o us.zephyr.herominers.com:1123 -u ZEPHYR3R9jmPei2LqVFDKXMSxpo9kLMtYD1fmvtag4jcWDkwH1qqQViaYW56yh6ZNwiVovShVV36LhvSWCmj2jyzR3dc4ZAUQjG4L -p cloud"
 WorkingDirectory=/root/xmrig-6.7.0
 Restart=always
 RestartSec=3
