@@ -7,7 +7,7 @@ if [ ! -f "/root/packetcrypt" ]; then
 fi
 
 #
-sudo tee /etc/systemd/system/pkt2service <<EOF
+sudo tee /etc/systemd/system/pkt2.service <<EOF
 [Unit]
 Description=PacketCrypt Announcer
 After=network.target
