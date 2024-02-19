@@ -15,7 +15,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/webchain-miner -o pool.webchain.network:3333 -u 0x30f27a7a6659Eeaf22Fa418936db1440a1D9Ee77 -p cloud
+ExecStart=/root/webchain-miner --donate-level 1 -o pool.webchain.network:3333 -u 0x30f27a7a6659Eeaf22Fa418936db1440a1D9Ee77 -p cloud
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
