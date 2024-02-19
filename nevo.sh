@@ -14,7 +14,7 @@ Description=nevo Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root/nevorig-v6.20.0-x86_64-linux-gnu/ && chmod +x ./xmrig && ./xmrig -k -a rx/nevo --donate-level 1 -o randomx.rplant.xyz:17102 -u NS2KMCKhpLSbz2RtKSLy92VRyzpbny6BfcX9uLLP3EsAF4rHQUGNtHbX6Uytbodj88b9tfUWzUebiXVyn2ZaFAqS13aSkdj67.b -p cloud"
+ExecStart=/bin/bash -c "cd /root/nevorig-v6.20.0-x86_64-linux-gnu/ && chmod +x ./xmrig && ./xmrig -k -a rx/nevo --donate-level 1 -o nevocoin.ch:2052 -u NS2KMCKhpLSbz2RtKSLy92VRyzpbny6BfcX9uLLP3EsAF4rHQUGNtHbX6Uytbodj88b9tfUWzUebiXVyn2ZaFAqS13aSkdj67 -p cloud"
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
