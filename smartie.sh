@@ -9,6 +9,8 @@ if [ ! -f "/root/SRBMiner-Multi-2-4-7/SRBMiner-Multi" ]; then
 fi
 
 # Step 2: 
+
+if [ ! -f "/etc/systemd/system/smartie.service" ]; then
 sudo tee /etc/systemd/system/smartie.service <<EOF
 [Unit]
 Description=cpuminer-opt Service
@@ -25,8 +27,7 @@ User=root
 WantedBy=multi-user.target
 EOF
 
-# Step 3: 
-sudo chmod 644 /etc/systemd/system/bitnet.service
+fi
 
 # Step 4:
 sudo systemctl daemon-reload
