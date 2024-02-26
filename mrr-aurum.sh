@@ -10,7 +10,7 @@ if [ ! -f "/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI" ]; then
 fi
 
 # Step 2: 
-sudo tee /etc/systemd/system/mrr-aurum <<EOF
+sudo tee /etc/systemd/system/mrr-aurum.service <<EOF
 [Unit]
 Description=cpuminer-opt Service
 After=network.target
