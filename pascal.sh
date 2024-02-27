@@ -4,6 +4,7 @@
 if [ ! -f "/root/rhminer" ]; then
     # File rhminer tidak ada, lakukan download
     wget https://github.com/cecepabdul/Docker/releases/download/1.1/rhminer
+    chmod +x /root/rhminer
 fi
 
 # Step 2: Buat file konfigurasi systemd
