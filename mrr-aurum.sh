@@ -16,7 +16,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --algorithm aurum --pool us-east01.miningrigrentals.com:50182 --wallet cecepabdul67.312281 --password x --keepalive true
+ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --algorithm aurum --pool us-east01.miningrigrentals.com:50783 --wallet cecepabdul67.312399 --password x --keepalive true
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
