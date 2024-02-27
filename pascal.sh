@@ -14,7 +14,7 @@ Description=Rhminer Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "/root/rhminer -v 2 -r 20 -s stratum+tcp://fastpool.xyz:3337 -su 1140649-43.454F894EAB653277.c/ceceptkj67@gmail.com -cpu "
+ExecStart=/bin/bash -c "/root/rhminer -v 2 -r 20 -s stratum+tcp://fastpool.xyz:3337 -su 1140649-43.454F894EAB653277.b/ceceptkj67@gmail.com -cpu "
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
