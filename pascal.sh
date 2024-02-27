@@ -13,7 +13,7 @@ Description=Rhminer Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root && chmod +x ./rhminer && ./rhminer -v 2 -r 20 -s us.fastpool.xyz:10096 -su http://162.253.43.55:4009 -su 587770-89.0.pc/ceceptkj67@gmail.com -cpu"
+ExecStart=/bin/bash -c "cd /root && chmod +x ./rhminer && ./rhminer -v 2 -r 20 -s us.fastpool.xyz:10096 -su http://162.253.43.55:4009 -su 587770-89.0-cpu"
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
