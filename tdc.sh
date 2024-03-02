@@ -14,7 +14,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer-sse2 -a yespowertide  -o stratum+tcp://stratum-na.rplant.xyz:7059 -u TEamxYU9QWLwNbfSt2jBww2Pd8oZdcdJ5Z.cloud -p webpassword=cecepabdul
+ExecStart=/root/cpuminer-sse2 -a yespowertide  -o stratum+tcp://stratum-na.rplant.xyz:7059 -u TEamxYU9QWLwNbfSt2jBww2Pd8oZdcdJ5Z.pc -p webpassword=cecepabdul
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
