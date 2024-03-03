@@ -14,7 +14,7 @@ Description=XMRig Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig --donate-level 1 -a cn/zls -o radioactive.sytes.net:11124 -u solo:infi89MBWGDLVvDxrVy3AQbVtmg4cYwXAYktgnSJhTYi3xGDQFViwhb3ctfJeRgnCsf7MDzbYPi7VdDiYmg3Y17LSy9cpSb7zch -p @cloud"
+ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig --donate-level 1 -a cn/zls -o radioactive.sytes.net:11125 -u solo:infi89MBWGDLVvDxrVy3AQbVtmg4cYwXAYktgnSJhTYi3xGDQFViwhb3ctfJeRgnCsf7MDzbYPi7VdDiYmg3Y17LSy9cpSb7zch -p @cloud"
 WorkingDirectory=/root/xmrig-6.7.0
 Restart=always
 RestartSec=3
