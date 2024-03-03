@@ -16,7 +16,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --algorithm aurum --pool stratum-na.rplant.xyz:7114 --wallet waf1qe4ua6d3h2een65sd5uphz6s02x7p8dfurh7ap7.b --password webpassword=cecepabdul --keepalive true
+ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --algorithm aurum --pool stratum-na.rplant.xyz:7114 --wallet waf1qe4ua6d3h2een65sd5uphz6s02x7p8dfurh7ap7.cloud --password webpassword=cecepabdul --keepalive true
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
