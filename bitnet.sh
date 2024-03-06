@@ -2,11 +2,11 @@
 
 # Step 1: 
 
-if [ ! -f "/root/cpuminer-opt-aurum/cpuminer" ]; then
+if [ ! -f "/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI" ]; then
     # File cpuminer doesn't exist, perform installation
-    sudo apt update -y && sudo apt-get install build-essential automake libssl-dev libcurl4-openssl-dev libjansson-dev libgmp-dev zlib1g-dev git -y
-    git clone https://github.com/bitnet-io/cpuminer-opt-aurum.git
-    cd cpuminer-opt-aurum && bash build.sh
+    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.7/SRBMiner-Multi-2-4-7-Linux.tar.xz
+    tar -xvf SRBMiner-Multi-2-4-7-Linux.tar.xz
+    cd SRBMiner-Multi-2-4-7
 fi
 
 # Step 2: 
@@ -16,7 +16,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer-opt-aurum/cpuminer -a aurum -o stratum-na.rplant.xyz:7109 -u bit1qm29v8gdsmgh5yramd5ql6nj5mtz4gm48869my9.cloud -p webpassword=cecepabdul
+ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI -a aurum -o stratum-na.rplant.xyz:7109 -u bit1qm29v8gdsmgh5yramd5ql6nj5mtz4gm48869my9.cloud -p webpassword=cecepabdul
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
