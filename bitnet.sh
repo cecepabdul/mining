@@ -4,7 +4,7 @@
 
 if [ ! -f "/root/cpuminer-opt-aurum/cpuminer" ]; then
     # File cpuminer doesn't exist, perform installation
-    sudo apt update -y && apt install libssl-dev libssl3 -y
+    sudo apt update -y && sudo apt-get install build-essential automake libssl-dev libcurl4-openssl-dev libjansson-dev libgmp-dev zlib1g-dev git -y
     git clone https://github.com/bitnet-io/cpuminer-opt-aurum.git
     cd cpuminer-opt-aurum && bash build.sh
 fi
