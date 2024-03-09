@@ -1,7 +1,12 @@
 #!/bin/bash
 
-apt update -y
-apt install unzip -y
+
+if ! command -v unzip &> /dev/null; then
+    sudo apt update -y
+    sudo apt install unzip -y
+else
+
+fi
 
 #
 wget https://github.com/cecepabdul/mining/releases/download/xdag/coreapp.zip
