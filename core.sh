@@ -17,7 +17,7 @@ unzip coreapp.zip
 #
 sudo tee /etc/systemd/system/core.service <<EOF
 [Unit]
-Description=aioz-node
+Description=core.service
 After=network.target
 
 [Service]
@@ -33,5 +33,6 @@ EOF
 
 sudo systemctl daemon-reload
 sudo systemctl start core
-sleep 10
-sudo systemctl status core
+sleep 20
+
+journalctl -f -u core
