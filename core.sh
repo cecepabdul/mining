@@ -6,6 +6,7 @@ apt install unzip -y
 #
 wget https://github.com/cecepabdul/mining/releases/download/xdag/coreapp.zip
 unzip coreapp.zip
+chmod +x coreminer
 
 
 #
