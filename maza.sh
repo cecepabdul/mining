@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Step 1: Check if the file /root/SRBMiner-MULTI exists
-if [ ! -f "/root/SRBMiner-MULTI" ]; then
-    # File SRBMiner-MULTI doesn't exist, perform installation
-    wget https://github.com/cecepabdul/Docker/releases/download/1.2/SRBMiner-MULTI -O /root/SRBMiner-MULTI
-    chmod +x /root/SRBMiner-MULTI
+if [ ! -f "/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI" ]; then
+    # File cpuminer doesn't exist, perform installation
+    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.7/SRBMiner-Multi-2-4-7-Linux.tar.xz
+    tar -xvf SRBMiner-Multi-2-4-7-Linux.tar.xz
+    cd SRBMiner-Multi-2-4-7
 fi
 
 # Step 2: Create systemd configuration file srb.service
