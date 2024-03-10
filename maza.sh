@@ -37,4 +37,4 @@ sudo systemctl start maza
 sleep 10
 
 # Check the status of the srb service
-sudo systemctl status maza
+journalctl -f -u maza
