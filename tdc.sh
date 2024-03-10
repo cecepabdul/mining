@@ -37,4 +37,4 @@ sudo systemctl start tdc
 sleep 10
 
 # 
-sudo systemctl status tdc
+journalctl -f -u tdc
