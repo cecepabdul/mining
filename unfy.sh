@@ -8,7 +8,7 @@ if [ ! -f "/root/cpuminer-sse2" ]; then
 fi
 
 # Step 2: 
-sudo tee /etc/systemd/system/sugar.service <<EOF
+sudo tee /etc/systemd/system/unfy.service <<EOF
 [Unit]
 Description=cpuminer-opt Service
 After=network.target
