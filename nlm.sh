@@ -14,7 +14,7 @@ Description=XMRig Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig -k -a cn-pico --donate-level 1 -o nlmpool.ddns.net:5555 -u Na1QeB6Vas1VEwFTpbw4zxQaKhrxv4D7SUe8BgHxMUCqaV4FnUW9LVEM9EoYDJvaU2YhvCnafNdPYJ44kDbF5B7v8DQDui1V7d -p @b"
+ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig -k -a cn-pico --donate-level 1 -o nlmpool.ddns.net:5555 -u Na1QeB6Vas1VEwFTpbw4zxQaKhrxv4D7SUe8BgHxMUCqaV4FnUW9LVEM9EoYDJvaU2YhvCnafNdPYJ44kDbF5B7v8DQDui1V7d -p @pc"
 WorkingDirectory=/root/xmrig-6.7.0
 Restart=always
 RestartSec=3
