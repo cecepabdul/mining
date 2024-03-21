@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Step 1: 
-if [ ! -f "/root/cpuminer-sse2" ]; then
-    # File cpuminer-avx doesn't exist, perform installation
-    wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.24/cpuminer-opt-linux.tar.gz -O /root/cpuminer-opt-linux.tar.gz
-    tar -xvf /root/cpuminer-opt-linux.tar.gz -C /root
+if [ ! -f "/root/cpu/cpuminer-sse2" ]; then
+    mkdir cpu && cd cpu
+    wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.36/cpuminer-opt-linux.tar.gz
+    tar -xvf cpuminer-opt-linux.tar.gz
 fi
 
 # Step 2: 
@@ -14,7 +14,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer-sse2 -a yespowersugar  -o stratum+tcp://stratum-na.rplant.xyz:7115 -u shuga1qn8rm6slpw5u4hucajr5674sdwxkune4zz22n5p.cloud -p webpassword=cecepabdul
+ExecStart=/root/cpu/cpuminer-sse2 -a yespowersugar  -o stratum+tcp://stratum-na.rplant.xyz:7115 -u shuga1qn8rm6slpw5u4hucajr5674sdwxkune4zz22n5p.cloud -p webpassword=cecepabdul
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
@@ -37,4 +37,4 @@ sudo systemctl start shuga
 sleep 10
 
 # 
-sudo systemctl status shuga
+journalctl -f -u shuga
