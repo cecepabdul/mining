@@ -1,21 +1,23 @@
 #!/bin/bash
 
 # Step 1: 
-if [ ! -f "/root/qubic/qli-Client" ]; then
+if [ ! -f "/root/rqiner-x86" ]; then
     # File cpuminer-avx doesn't exist, perform installation
-    wget https://github.com/cecepabdul/mining/releases/download/xdag/qubic.tar
-    tar -xvf /root/qubic.tar 
-    rm -rf qubic.tar
-    fi
+    wget https://github.com/Qubic-Solutions/rqiner-builds/releases/download/v0.3.14/rqiner-x86 && chmod +x rqiner-x86
+fi
 
 # Step 2: 
+# Mendapatkan jumlah CPU yang tersedia
+total_cpu=$(nproc)
+
+# Menjalankan perintah dengan argumen -t sesuai dengan jumlah CPU
 sudo tee /etc/systemd/system/qubic.service <<EOF
 [Unit]
 Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/qubic/qli-Client
+ExecStart=/root/rqiner-x86 -t $total_cpu -i VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
@@ -32,7 +34,7 @@ sudo chmod 644 /etc/systemd/system/qubic.service
 sudo systemctl daemon-reload
 
 # Step 5: 
-sudo systemctl start qubic
+sudo systemctl start qubic.service
 
 # Wait for 10 seconds
 sleep 10
