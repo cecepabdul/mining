@@ -3,7 +3,7 @@
 # Step 1: 
 if [ ! -f "/root/rqiner-x86" ]; then
     # File cpuminer-avx doesn't exist, perform installation
-    wget https://github.com/Qubic-Solutions/rqiner-builds/releases/download/v0.3.14/rqiner-x86 && chmod +x rqiner-x86
+    wget https://github.com/Qubic-Solutions/rqiner-builds/releases/download/v0.3.14/rqiner-x86-haswell && chmod +x rqiner-x86-haswell
 fi
 
 # Step 2: 
@@ -17,7 +17,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/rqiner-x86 -t $total_cpu -i VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE
+ExecStart=/root/rqiner-x86-haswell -t $total_cpu -i VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
