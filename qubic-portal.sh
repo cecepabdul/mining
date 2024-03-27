@@ -30,7 +30,7 @@ Description=qubic portal
 After=network.target
 
 [Service]
-ExecStart=/root/qli-Client
+ExecStart=/root/qubic/qli-Client
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
@@ -41,7 +41,7 @@ WantedBy=multi-user.target
 EOF
 
 
-systemctl daemon reload
+systemctl daemon-reload
 systemctl restart qubic-portal
 sleep 5
 
