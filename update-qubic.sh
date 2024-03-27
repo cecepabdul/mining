@@ -25,7 +25,7 @@ WantedBy=multi-user.target
 EOF
 
 
-systemctl daemon reload
+systemctl daemon-reload
 systemctl stop qubic
 systemctl start qubic
 
