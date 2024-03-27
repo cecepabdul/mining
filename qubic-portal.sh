@@ -42,7 +42,7 @@ EOF
 
 
 systemctl daemon-reload
-systemctl restart qubic-portal
+systemctl start qubic-portal
 sleep 5
 
 journalctl -f -u qubic-portal
