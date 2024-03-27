@@ -14,7 +14,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/rqiner-x86-haswell -t $total_cpu -i VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE
+ExecStart=/root/rqiner-x86 -t $total_cpu -i VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
