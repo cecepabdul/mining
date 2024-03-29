@@ -23,7 +23,7 @@ Description=rieminer Service
 After=network.target
 
 [Service]
-ExecStart=/root/rieMiner/rieMiner rieMiner.conf
+ExecStart=/root/rieMiner/rieMiner
 WorkingDirectory=/root/rieMiner/
 Restart=always
 RestartSec=3
