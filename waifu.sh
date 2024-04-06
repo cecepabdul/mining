@@ -2,7 +2,7 @@
 
 # Step 1: 
 
-if [ ! -f "/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI" ]; then
+if [ ! -f "/root/SRBMiner-Multi-2-5-1/SRBMiner-MULTI" ]; then
     # File cpuminer doesn't exist, perform installation
     wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.5.1/SRBMiner-Multi-2-5-1-Linux.tar.gz
     tar -xvf SRBMiner-Multi-2-5-1-Linux.tar.gz
@@ -16,7 +16,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-5-1/srbminer-multi --algorithm aurum --pool stratum-na.rplant.xyz:17114 --tls true --wallet waf1qhpp9w4yv5jr9t2s28a09kg7hq4eu0r47fn7erp.cloud --password webpassword=cecepabdul,m=solo --keepalive true
+ExecStart=/root/SRBMiner-Multi-2-5-1/SRBMiner-MULTI --algorithm aurum --pool stratum-na.rplant.xyz:17114 --tls true --wallet waf1qhpp9w4yv5jr9t2s28a09kg7hq4eu0r47fn7erp.cloud --password webpassword=cecepabdul,m=solo --keepalive true
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
