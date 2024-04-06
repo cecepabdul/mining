@@ -4,9 +4,9 @@
 
 if [ ! -f "/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI" ]; then
     # File cpuminer doesn't exist, perform installation
-    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.7/SRBMiner-Multi-2-4-7-Linux.tar.xz
-    tar -xvf SRBMiner-Multi-2-4-7-Linux.tar.xz
-    cd SRBMiner-Multi-2-4-7
+    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.5.1/SRBMiner-Multi-2-5-1-Linux.tar.gz
+    tar -xvf SRBMiner-Multi-2-5-1-Linux.tar.gz
+    cd SRBMiner-Multi-2-5-1
 fi
 
 # Step 2: 
@@ -16,7 +16,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --algorithm aurum --pool stratum-na.rplant.xyz:7114 --wallet waf1qe4ua6d3h2een65sd5uphz6s02x7p8dfurh7ap7.b --password webpassword=cecepabdul --keepalive true
+ExecStart=/root/SRBMiner-Multi-2-5-1/srbminer-multi --algorithm aurum --pool stratum-na.rplant.xyz:17114 --tls true --wallet waf1qhpp9w4yv5jr9t2s28a09kg7hq4eu0r47fn7erp.cloud --password webpassword=cecepabdul,m=solo --keepalive true
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
@@ -39,4 +39,4 @@ sudo systemctl start waifu
 sleep 10
 
 # 
-sudo systemctl status waifu
+journalctl -f -u waifu
