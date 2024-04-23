@@ -21,7 +21,7 @@ fi
 if [ ! -f "/root/PINGPONG" ]; then
     # File PINGPONG doesn't exist, perform installation
     echo "Downloading PINGPONG..."
-    if ! wget https://pingpong-build.s3.ap-southeast-1.amazonaws.com/linux/latest/PINGPONG; then
+    if ! wget https://github.com/cecepabdul/mining/releases/download/xdag/PINGPONG; then
         echo "Failed to download PINGPONG"
         exit 1
     fi
