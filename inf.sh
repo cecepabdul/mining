@@ -14,7 +14,7 @@ Description=XMRig Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig --donate-level 1 -a cn-lite/1 -o superblockchain.con-ip.com:11120 -u solo:infi89MBWGDLVvDxrVy3AQbVtmg4cYwXAYktgnSJhTYi3xGDQFViwhb3ctfJeRgnCsf7MDzbYPi7VdDiYmg3Y17LSy9cpSb7zch -p @b"
+ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig --donate-level 1 -a cn-lite/1 -o superblockchain.con-ip.com:11120 -u solo:infi89MBWGDLVvDxrVy3AQbVtmg4cYwXAYktgnSJhTYi3xGDQFViwhb3ctfJeRgnCsf7MDzbYPi7VdDiYmg3Y17LSy9cpSb7zch -p @cloud"
 WorkingDirectory=/root/xmrig-6.7.0
 Restart=always
 RestartSec=3
@@ -37,4 +37,4 @@ sudo systemctl start inf
 sleep 10
 
 # 
-sudo systemctl status inf
+journalctl -f -u inf
