@@ -2,7 +2,7 @@
 
 #
 mkdir ~/qubicmine;
-cd ~/qubic;
+cd ~/qubicmine;
 wget https://github.com/cecepabdul/mining/releases/download/xdag/libclient;
 wget https://github.com/cecepabdul/mining/releases/download/xdag/qubic-pool-miner;
 chmod +x qubic-pool-miner;
