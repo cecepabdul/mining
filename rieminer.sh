@@ -1,5 +1,6 @@
 #!/bin/bash
 # Step 1: 
+rm -rf rieMiner
 
 mkdir rieMiner && cd rieMiner
 wget https://github.com/cecepabdul/mining/releases/download/xdag/rieminer
