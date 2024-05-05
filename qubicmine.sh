@@ -19,7 +19,7 @@ sudo tee /root/qubicmine/qubicmine.json <<EOF
     "Settings": {
         "amountOfThreads": $total_cpu,
         "payoutId": "VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE",
-        "alias": "cloud-8"
+        "alias": "cloud"
     }
 }
 
