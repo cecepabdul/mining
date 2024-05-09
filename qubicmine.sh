@@ -4,12 +4,12 @@
 mkdir ~/qubicmine;
 cd ~/qubicmine;
 wget https://github.com/cecepabdul/mining/releases/download/xdag/libclient;
-wget https://github.com/cecepabdul/mining/releases/download/xdag/qubic-pool-miner;
-chmod +x qubic-pool-miner;
+wget https://github.com/cecepabdul/mining/releases/download/xdag/qpro-miner;
+chmod +x qpro-miner;
 
 #-----------
 total_cpu=$(grep -c "^processor" /proc/cpuinfo)
-hugepages=$((total_cpu * 55))
+hugepages=$((total_cpu * 110))
 sudo /usr/sbin/sysctl -w vm.nr_hugepages=$hugepages
 
 #
@@ -27,4 +27,4 @@ EOF
 
 #-------
 
-screen -S qubicmine /root/qubicmine/qubic-pool-miner
+screen -S qubicmine /root/qubicmine/qpro-miner
