@@ -21,7 +21,7 @@ Description=core.service
 After=network.target
 
 [Service]
-ExecStart=/root/coreapp/coreminer -P stratum://cb567ce1c516e760df614d857b39a584461075a77a6b.pc@eu.catchthatrabbit.com:8008
+ExecStart=/root/coreapp/coreminer -P stratum://cb567ce1c516e760df614d857b39a584461075a77a6b.cloud@eu.catchthatrabbit.com:8008
 WorkingDirectory=/root/coreapp/
 Restart=always
 RestartSec=3
