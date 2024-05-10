@@ -1,11 +1,11 @@
 #!/bin/bash
 
-
 if ! command -v unzip &> /dev/null; then
+    echo "Installing unzip..."
     sudo apt update -y
     sudo apt install unzip -y
 else
-
+    echo "Unzip is already installed."
 fi
 
 #
