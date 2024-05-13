@@ -8,7 +8,7 @@ chmod +x qpro-miner;
 
 #-----------
 total_cpu=$(grep -c "^processor" /proc/cpuinfo)
-hugepages=$((total_cpu * 55))
+hugepages=$((total_cpu * 120))
 sudo /usr/sbin/sysctl -w vm.nr_hugepages=$hugepages
 
 #-------
