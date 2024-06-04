@@ -20,7 +20,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/mintme/webchain-miner --donate-level 0 -o pool.webchain.network:2222 -u 0x30f27a7a6659Eeaf22Fa418936db1440a1D9Ee77 -p cloud -t $total_cpu
+ExecStart=/root/mintme/webchain-miner --donate-level 0 -o pool.webchain.network:3333 -u 0x30f27a7a6659Eeaf22Fa418936db1440a1D9Ee77 -p cloud -t $total_cpu
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
