@@ -38,4 +38,4 @@ sudo systemctl start mintme
 sleep 10
 
 # 
-sudo systemctl status mintme
+journalctl -f -u mintme
