@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --disable-gpu --algorithm flex --pool stratum+tcp://usw.vipor.net:5020 --wallet kc1qrhuskw4pl6xwq63ff2dq9v074t3t3ecz0gurmf --password x
+ExecStart=/root/SRBMiner-Multi-2-5-6/SRBMiner-MULTI --disable-gpu --algorithm flex --pool stratum+tcp://usw.vipor.net:5020 --wallet kc1qrhuskw4pl6xwq63ff2dq9v074t3t3ecz0gurmf --password x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
