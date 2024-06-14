@@ -32,4 +32,5 @@ systemctl enable pingpong.service
 # Menjalankan service
 systemctl start pingpong.service
 
+journalctl -f -u pingpong.service
 echo "PingPong service has been set up and started."
