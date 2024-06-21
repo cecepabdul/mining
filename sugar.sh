@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --disable-gpu --algorithm yespowersugar --pool stratum+tcp://yespowerSUGAR.na.mine.zergpool.com:16535 --wallet TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj --password c=TRX,mc=SUGAR,m=solo,ID=cloud
+ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --disable-gpu --algorithm yespowersugar --pool stratum+tcp://yespowerSUGAR.na.mine.zergpool.com:6535 --wallet TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj --password c=TRX,mc=SUGAR,m=solo,ID=cloud
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
