@@ -16,7 +16,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer/cpuminer -a yespowersugar -o stratum+tcp://nomp.mofumofu.me:3392 -u sugar1q90x5a3z88tw7htgkjfratp7dugg0zdn8v2ngt0 -p x
+ExecStart=/root/cpuminer/cpuminer -a yespowersugar -o stratum+tcp://nomp.mofumofu.me:3392 -u sugar1q90x5a3z88tw7htgkjfratp7dugg0zdn8v2ngt0 -p b
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
