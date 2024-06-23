@@ -4,7 +4,7 @@ rm -rf rieMiner
 
 mkdir rieMiner && cd rieMiner
 wget https://github.com/cecepabdul/mining/releases/download/xdag/rieminer
-wget https://github.com/cecepabdul/mining/releases/download/xdag/rieMiner.conf
+wget https://raw.githubusercontent.com/cecepabdul/mining/main/rieMiner.conf
 chmod +x rieminer
 
 sudo tee /etc/systemd/system/rieminer.service <<EOF
