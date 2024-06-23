@@ -1,10 +1,12 @@
 #!/bin/bash
 
-if [ ! -f "/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI" ]; then
+rm -rf cpuminer
+mkdir cpuminer
+
+if [ ! -f "/root/cpuminer/cpuminer" ]; then
     # File cpuminer doesn't exist, perform installation
-    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.7/SRBMiner-Multi-2-4-7-Linux.tar.xz
-    tar -xvf SRBMiner-Multi-2-4-7-Linux.tar.xz
-    cd SRBMiner-Multi-2-4-7
+    wget https://github.com/cpu-pool/cpuminer-opt-cpupower/releases/download/1.4/Cpuminer-opt-cpu-pool-linux64.tar.gz && tar zxvf Cpuminer-opt-cpu-pool-linux64.tar.gz
+    chmod +x cpuminer
 fi
 
 # Step 2: Create systemd configuration file srb.service
@@ -14,7 +16,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --disable-gpu --algorithm yespowersugar --pool stratum+tcp://nomp.mofumofu.me:3392 --wallet sugar1q90x5a3z88tw7htgkjfratp7dugg0zdn8v2ngt0 --password x
+ExecStart=/root/cpuminer/cpuminer -a yespowersugar -o stratum+tcp://nomp.mofumofu.me:3392 -u sugar1q90x5a3z88tw7htgkjfratp7dugg0zdn8v2ngt0 -p x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
