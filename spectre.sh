@@ -18,7 +18,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/bin/spectre-miner-v0.3.15-linux-gnu-amd64 --spectred-address 162.253.42.63 --port 18110 --mining-address spectre:qrwfxd2qddag0x7jplypx5xka4rmxjpuwqxd8yt43v6lzhfz0dnajq2n9n2yw --threads $total_cpu
+ExecStart=/root/bin/spectre-miner-v0.3.15-linux-gnu-amd64 --spectred-address 162.253.42.63 --port 18110 --mining-address spectre:qpld0x640ndys29l9xd6fxvhgnn60vyn0er5m73z7yw4gpmepe3lvy0d4ppg2 --threads $total_cpu
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
