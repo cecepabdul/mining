@@ -7,8 +7,8 @@ cd tnn
 
 if [ ! -f "/root/tnn/tnn-miner/tnn-miner" ]; then
     # File cpuminer doesn't exist, perform installation
-    wget https://github.com/ddobreff/mmpos/releases/download/v0.3.6/tnn-miner-v0.3.6.tar.gz
-    tar -xvf tnn-miner-v0.3.6.tar.gz
+    wget https://github.com/ddobreff/mmpos/releases/download/v0.3.7.br1.4/tnn-miner-v0.3.7.br1.4.tar.gz
+    tar tnn-miner-v0.3.7.br1.4.tar.gz
     cd tnn-miner
 fi
 
