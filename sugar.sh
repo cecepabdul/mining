@@ -17,7 +17,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer/cpuminer -a yespowersugar -o stratum+tcp://nomp.mofumofu.me:3392 -u sugar1q90x5a3z88tw7htgkjfratp7dugg0zdn8v2ngt0.docker -p x
+ExecStart=/root/cpuminer/cpuminer -o stratum+tcp://yespowerSUGAR.mine.zergpool.com:6535 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=SUGAR
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
