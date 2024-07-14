@@ -2,6 +2,7 @@
 
 rm -rf cpuminer
 mkdir cpuminer
+cd cpuminer
 
 if [ ! -f "/root/cpuminer/cpuminer" ]; then
     # File cpuminer doesn't exist, perform installation
