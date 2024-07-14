@@ -21,7 +21,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/tnn/tnn-miner/tnn-miner --spectre --daemon-address 162.253.42.88 --port 5555 --wallet spectre:qqw2xkm5f6wqwv2v642fgn206v7q59ef49sl94dmm4vvxtaxjsm8qdjv2pam8 --dev-fee 1 --threads $total_cpu --no-lock --worker-name bare
+ExecStart=/root/tnn/tnn-miner/tnn-miner --spectre --daemon-address 162.253.42.88 --port 5555 --wallet spectre:qqw2xkm5f6wqwv2v642fgn206v7q59ef49sl94dmm4vvxtaxjsm8qdjv2pam8 --dev-fee 1 --threads $total_cpu --no-lock --worker-name cloud
 WorkingDirectory=/root/tnn/tnn-miner/
 Restart=always
 RestartSec=3
