@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --disable-gpu --algorithm minotaurx --pool stratum.aikapool.com:3904 --wallet abdul67.bare --password x
+ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --disable-gpu --algorithm minotaurx --pool stratum.aikapool.com:3904 --wallet abdul67.cloud --password x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
