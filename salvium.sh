@@ -20,7 +20,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/xmrig-salvium-linux/xmrig -a rx/0 --url randomx.rplant.xyz:17130 --tls --user SaLvsD5Bkq6ZTiy5MEt8HNAFHYMzbxn5i2iNpouUNJTtaqYdfTcbfiwChrr92tWmZYYtthAu3ENnVHHvD4UmUMESFzNJ8AskYd5.cloud --pass webpassword=cecepabdul --coin SAL
+ExecStart=/root/xmrig/build/xmrig -a rx/0 --url randomx.rplant.xyz:17130 --tls --user SaLvsD5Bkq6ZTiy5MEt8HNAFHYMzbxn5i2iNpouUNJTtaqYdfTcbfiwChrr92tWmZYYtthAu3ENnVHHvD4UmUMESFzNJ8AskYd5.cloud --pass webpassword=cecepabdul --coin SAL
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
