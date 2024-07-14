@@ -17,7 +17,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer/cpuminer -o stratum+tcp://blockhunters.space:6800 -u sugar1q4vcxkt82achnuqzwsavgha6jyurtgywj26grpj -p b
+ExecStart=/root/cpuminer/cpuminer -a yespowersugar -o stratum+tcp://blockhunters.space:6800 -u sugar1q4vcxkt82achnuqzwsavgha6jyurtgywj26grpj -p b
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
