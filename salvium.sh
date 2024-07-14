@@ -1,13 +1,16 @@
 #!/bin/bash
 
-apt update -y
-sudo apt-get install bzip2 -y
+rm -rf xmrig
 
 
-if [ ! -f "xmrig-salvium-linux/xmrig" ]; then
+if [ ! -f "/root/xmrig/build/xmrig" ]; then
+    apt update -y
+    sudo apt install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
     # File cpuminer doesn't exist, perform installation
-    wget https://github.com/rplant8/xmrig-salvium/releases/download/6.21.3-salvium/xmrig-salvium-linux.tar.bz2 && tar -xvf xmrig-salvium-linux.tar.bz2
-    cd xmrig-salvium-linux
+    git clone https://github.com/salvium/xmrig.git
+    mkdir xmrig/build && cd xmrig/build
+    cmake ..
+    make -j$(nproc)
 fi
 
 # Step 2: Create systemd configuration file srb.service
