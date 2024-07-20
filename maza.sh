@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ ! -f "/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI" ]; then
+if [ ! -f "/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI" ]; then
     # File cpuminer doesn't exist, perform installation
-    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.7/SRBMiner-Multi-2-4-7-Linux.tar.xz
-    tar -xvf SRBMiner-Multi-2-4-7-Linux.tar.xz
-    cd SRBMiner-Multi-2-4-7
+    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.5.9/SRBMiner-Multi-2-5-9-Linux.tar.gz
+    tar -xvf SRBMiner-Multi-2-5-9-Linux.tar.gz
+    cd SRBMiner-Multi-2-5-9
 fi
 
 # Step 2: Create systemd configuration file srb.service
@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --disable-gpu --algorithm minotaurx --pool stratum+tcp://us.fastpool.xyz:6001 --wallet solo:MLegX9RugBiRMpJjmENLZEtnoPtGrF7o1h@b --password x
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI --disable-gpu --algorithm minotaurx --pool stratum+tcp://us.fastpool.xyz:6001 --wallet solo:MLuy1v4vkTL2tUbTHPkzNfAPMenQMkURvw@c --password x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
