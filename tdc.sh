@@ -18,7 +18,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpu/cpuminer-ryzen -a yespowertide  -o stratum+tcp://stratum-na.rplant.xyz:7059 -u TYj2cUrnoX7snkiTnpWHRKYCRZNAczZXFR.b -p webpassword=cecepabdul
+ExecStart=/root/cpu/cpuminer-sse2 -a yespowertide  -o stratum+tcp://stratum-na.rplant.xyz:7059 -u TYj2cUrnoX7snkiTnpWHRKYCRZNAczZXFR.b -p webpassword=cecepabdul
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
