@@ -1,14 +1,10 @@
 #!/bin/bash
 
-rm -rf cpu
-mkdir cpu
-cd cpu
-
-# Step 1: 
-if [ ! -f "/root/cpuminer-sse2" ]; then
-    # File cpuminer-avx doesn't exist, perform installation
-    wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.40/cpuminer-opt-linux-5.0.40.tar.gz -O /root/cpu/cpuminer-opt-linux.tar.gz
-    tar -xvf /root/cpu/cpuminer-opt-linux.tar.gz -C /root/cpu
+if [ ! -f "/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI" ]; then
+    # File cpuminer doesn't exist, perform installation
+    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.5.9/SRBMiner-Multi-2-5-9-Linux.tar.gz
+    tar -xvf SRBMiner-Multi-2-5-9-Linux.tar.gz
+    cd SRBMiner-Multi-2-5-9
 fi
 
 # Step 2: 
@@ -18,7 +14,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer-sse2 -a yespowertide  -o stratum+tcp://stratum-na.rplant.xyz:7059 -u TEamxYU9QWLwNbfSt2jBww2Pd8oZdcdJ5Z.b -p webpassword=cecepabdul
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI -a yespowertide  -o stratum+tcp://stratum-na.rplant.xyz:7059 -u TYj2cUrnoX7snkiTnpWHRKYCRZNAczZXFR.b -p webpassword=cecepabdul
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
