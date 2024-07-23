@@ -1,10 +1,14 @@
 #!/bin/bash
 
+rm -rf cpu
+mkdir cpu
+cd cpu
+
 # Step 1: 
 if [ ! -f "/root/cpuminer-sse2" ]; then
     # File cpuminer-avx doesn't exist, perform installation
-    wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.24/cpuminer-opt-linux.tar.gz -O /root/cpuminer-opt-linux.tar.gz
-    tar -xvf /root/cpuminer-opt-linux.tar.gz -C /root
+    wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.40/cpuminer-opt-linux-5.0.40.tar.gz -O /root/cpu/cpuminer-opt-linux.tar.gz
+    tar -xvf /root/cpu/cpuminer-opt-linux.tar.gz -C /root/cpu
 fi
 
 # Step 2: 
