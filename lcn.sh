@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI -a flex -o stratum+ssl://eu.mpool.live:5213 -u LCN=lc1q42j0ufp4c2qxvw9tp0u6e3v0k3djwpwr5p2cec -p m=solo
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI -a flex -o stratum+ssl://eu.mpool.live:5213 -u LCN=lc1q42j0ufp4c2qxvw9tp0u6e3v0k3djwpwr5p2cec 
 
 WorkingDirectory=/root
 Restart=always
