@@ -3,7 +3,7 @@
 if [ ! -f "/root/flex/cpuminer-sse2" ]; then
     mkdir flex
     cd flex
-    https://github.com/f1exlabs/cpuminer/releases/download/v2.0/cpuminer-linux-x64-v2.0.tar.gz
+    wget https://github.com/f1exlabs/cpuminer/releases/download/v2.0/cpuminer-linux-x64-v2.0.tar.gz
     tar -xvf cpuminer-linux-x64-v2.0.tar.gz
 fi
 
