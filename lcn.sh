@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f "/root/SRBMiner-Multi-2-5-/SRBMiner-MULTI" ]; then
+if [ ! -f "/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI" ]; then
     # File cpuminer doesn't exist, perform installation
     wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.5.9/SRBMiner-Multi-2-5-9-Linux.tar.gz
     tar -xvf SRBMiner-Multi-2-5-9-Linux.tar.gz
@@ -14,7 +14,7 @@ Description=cpuminer-sse2
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-5-/SRBMiner-MULTI -a flex -o us-tx01.miningrigrentals.com:3333 -u cecepabdul67.325505 -p x
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI -a flex -o us-tx01.miningrigrentals.com:3333 -u cecepabdul67.325505 -p x
 
 WorkingDirectory=/root
 Restart=always
