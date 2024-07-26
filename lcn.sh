@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ ! -f "/root/flex/cpuminer-sse2" ]; then
-    mkdir flex
-    cd flex
-    wget https://github.com/f1exlabs/cpuminer/releases/download/v2.0/cpuminer-linux-x64-v2.0.tar.gz
-    tar -xvf cpuminer-linux-x64-v2.0.tar.gz
+if [ ! -f "/root/SRBMiner-Multi-2-5-/SRBMiner-MULTI" ]; then
+    # File cpuminer doesn't exist, perform installation
+    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.5.9/SRBMiner-Multi-2-5-9-Linux.tar.gz
+    tar -xvf SRBMiner-Multi-2-5-9-Linux.tar.gz
+    cd SRBMiner-Multi-2-5-9
 fi
 
 # Step 2: Create systemd configuration file srb.service
@@ -14,7 +14,7 @@ Description=cpuminer-sse2
 After=network.target
 
 [Service]
-ExecStart=/root/flex/cpuminer-sse2 -a flex -o stratum+tcp://eu.mpool.live:5271 -u KCN=kc1qp5yja446at38ya3peaxtm5x6w2vx4atlvd867h,LCN=lc1q42j0ufp4c2qxvw9tp0u6e3v0k3djwpwr5p2cec -p m=solo
+ExecStart=/root/SRBMiner-Multi-2-5-/SRBMiner-MULTI -a flex -o us-tx01.miningrigrentals.com:3333 -u cecepabdul67.325505 -p x
 
 WorkingDirectory=/root
 Restart=always
