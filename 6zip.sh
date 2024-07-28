@@ -6,7 +6,7 @@ rm -rf cpuminer
 if [ ! -f "/root/cpuminer/cpuminer-sse2" ]; then
     mkdir cpuminer
     cd cpuminer
-    wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.41/cpuminer-opt-mac-5.0.41.tar.gz -O /root/cpuminer/cpuminer-opt-linux.tar.gz
+    wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.41/cpuminer-opt-linux-5.0.41a.tar.gz -O /root/cpuminer/cpuminer-opt-linux.tar.gz
     tar -xvf /root/cpuminer/cpuminer-opt-linux.tar.gz -C /root/cpuminer
 fi
 
