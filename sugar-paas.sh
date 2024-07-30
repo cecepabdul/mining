@@ -37,4 +37,4 @@ sudo systemctl start sugar
 sleep 10
 
 # 
-sudo systemctl status sugar
+journalctl -f -u sugar
