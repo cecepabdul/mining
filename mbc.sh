@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI  --algorithm power2b --pool stratum+tcp://power2b.na.mine.zpool.ca:6242 --wallet MpTmkKueJSaKe9TJDbefvJooSLENUSkgpQ -p c=MBC,zap=MBC
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI  --algorithm power2b --pool stratum+tcp://power2b.na.mine.zpool.ca:6242 --wallet mbc1qw73lap8064jyku2d2j0ypzs3e8yh9xd2cx4cks -p c=MBC,zap=MBC
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
