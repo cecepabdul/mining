@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/hellminer -c stratum+tcp://usw.vipor.net:5040 -u REwKqDLJyP2BZnvnw4rm9yCGWEEE8pkVHA.b -p hybrid
+ExecStart=/root/hellminer -c stratum+tcp://na.luckpool.net:3956 -u REwKqDLJyP2BZnvnw4rm9yCGWEEE8pkVHA.b -p hybrid
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
