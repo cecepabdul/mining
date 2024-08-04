@@ -40,4 +40,4 @@ sudo systemctl start xdag
 sleep 10
 
 # 
-sudo systemctl status xdag
+journalctl -f -u xdag
