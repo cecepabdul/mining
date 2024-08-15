@@ -14,7 +14,7 @@ Description=XMRig Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig -k -a rx/sfx --donate-level 1 -o sf.pool-pay.com:4025 -u SafexsoxtaMfjjELEpfNrPQfBjMJvKWji4PhEoyBpffve3EgUwsN7qARsiXjXoRsbsCWJVy488Qkt56G6NDZDcMLLo1koyfFVqo3z -p x@c"
+ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig -k -a rx/sfx --donate-level 1 -o pool.safex.org:4411 -u Safex61Jc9684fqa4ThEuuXntyTrXKCj9WnaGVgsCgFHMepkMUgRAt6DxGTok35kvU3UCjch2g17HVenvsDwxjdET1ciehJaJuW4L -p x@c"
 WorkingDirectory=/root/xmrig-6.7.0
 Restart=always
 RestartSec=3
@@ -37,4 +37,4 @@ sudo systemctl start sfx
 sleep 10
 
 # 
-sudo systemctl status sfx
+journalctl -f -u sfx
