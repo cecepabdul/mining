@@ -27,7 +27,7 @@ Description=oreminer instance ${i}
 After=network.target
 
 [Service]
-ExecStart=/root/ore-pool-cli mine --address BZH6iXi4NrtJseFa4jwLGiB17hMkD7i6jydqxq1TG1XL --thread ${thread_count}
+ExecStart=/root/ore-pool-cli mine --address BZH6iXi4NrtJseFa4jwLGiB17hMkD7i6jydqxq1TG1XL --threads ${thread_count}
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
