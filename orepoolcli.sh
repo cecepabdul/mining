@@ -48,4 +48,4 @@ EOF
 done
 
 # Optionally, you can follow the logs of all these services using journalctl
-journalctl -f -u 'orepool*' &
+journalctl -f -u 'orepoolcli*' &
