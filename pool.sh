@@ -1,14 +1,15 @@
 #!/bin/bash
 
-# Check if the user provided both arguments (number of services and threads)
-if [ -z "$1" ] || [ -z "$2" ]; then
-    echo "Usage: $0 <number_of_services> <number_of_threads>"
+# Check if the user provided all three arguments (number of services, wallet address, and number of threads)
+if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]; then
+    echo "Usage: $0 <number_of_services> <wallet_address> <number_of_threads>"
     exit 1
 fi
 
-# Set the number of services and threads based on the arguments
+# Set the number of services, wallet address, and threads based on the arguments
 service_count=$1
-thread_count=$2
+wallet_address=$2
+thread_count=$3
 
 # Step 1: Download and prepare the miner binary if it doesn't exist
 if [ ! -f "/root/p" ]; then
@@ -27,7 +28,7 @@ Description=oreminer instance ${i}
 After=network.target
 
 [Service]
-ExecStart=/root/p wallet=BZH6iXi4NrtJseFa4jwLGiB17hMkD7i6jydqxq1TG1XL thread=${thread_count}
+ExecStart=/root/p wallet=${wallet_address} thread=${thread_count}
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
