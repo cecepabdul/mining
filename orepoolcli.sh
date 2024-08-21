@@ -12,7 +12,7 @@ thread_count=$2
 
 # Step 1: Download and prepare the miner binary if it doesn't exist
 if [ ! -f "/root/ore-pool-cli" ]; then
-    wget https://github.com/ore-pool/ore-pool-cli/raw/master/ore-pool-cli
+    wget https://github.com/ore-pool/ore-pool-cli/releases/download/v1.1.0/ore-pool-cli-v1.1.0
     chmod +x ore-pool-cli
 fi
 
@@ -27,7 +27,7 @@ Description=oreminer instance ${i}
 After=network.target
 
 [Service]
-ExecStart=/root/ore-pool-cli mine --address BZH6iXi4NrtJseFa4jwLGiB17hMkD7i6jydqxq1TG1XL --threads ${thread_count}
+ExecStart=/root/ore-pool-cli-v1.1.0 mine --address BZH6iXi4NrtJseFa4jwLGiB17hMkD7i6jydqxq1TG1XL --threads ${thread_count}
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
