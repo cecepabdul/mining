@@ -11,7 +11,7 @@ service_count=$1
 thread_count=$2
 
 # Step 1: Download and prepare the miner binary if it doesn't exist
-if [ ! -f "/root/ore-pool-cli" ]; then
+if [ ! -f "/root/ore-pool-cli-v1.1.0" ]; then
     wget https://github.com/ore-pool/ore-pool-cli/releases/download/v1.1.0/ore-pool-cli-v1.1.0
     chmod +x ore-pool-cli-v1.1.0
 fi
