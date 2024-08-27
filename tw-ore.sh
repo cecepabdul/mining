@@ -15,7 +15,7 @@ Description=cpuminer-opt Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpu/ore-hq-client-ubuntu22 --url ws://ore.tw-pool.com:5487/mine mine --username BZH6iXi4NrtJseFa4jwLGiB17hMkD7i6jydqxq1TG1XL.c --cores $total_cpu 
+ExecStart=/root/ore-hq-client-ubuntu22 --url ws://ore.tw-pool.com:5487/mine mine --username BZH6iXi4NrtJseFa4jwLGiB17hMkD7i6jydqxq1TG1XL.c --cores $total_cpu 
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
