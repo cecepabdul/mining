@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -rf cpu
 
 # Step 1: 
 if [ ! -f "/root/cpu/cpuminer-sse2" ]; then
