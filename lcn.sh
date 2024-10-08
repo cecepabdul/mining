@@ -14,7 +14,7 @@ Description=cpuminer-sse2
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI -a flex -o stratum+tcp://us.mpool.live:5271 -u KCN=kc1qp5yja446at38ya3peaxtm5x6w2vx4atlvd867h,LCN=lc1q42j0ufp4c2qxvw9tp0u6e3v0k3djwpwr5p2cec
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI -a flex -o stratum+tcp://us.mpool.live:5271 -u KCN=kc1qp5yja446at38ya3peaxtm5x6w2vx4atlvd867h.b -p LCN=lc1q42j0ufp4c2qxvw9tp0u6e3v0k3djwpwr5p2cec.b
 
 WorkingDirectory=/root
 Restart=always
