@@ -5,7 +5,7 @@
 if [ ! -f "/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI" ]; then
     # File cpuminer doesn't exist, perform installation
     wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.6.6/SRBMiner-Multi-2-6-6-Linux.tar.gz
-    tar -xvf SRBMiner-Multi-2-6-6-Linux.tar.xz
+    tar -xvf SRBMiner-Multi-2-6-6-Linux.tar.gz
     cd SRBMiner-Multi-2-6-6
 fi
 
