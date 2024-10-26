@@ -1,11 +1,14 @@
 #!/bin/bash
 
-if [ ! -f "/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI" ]; then
-    # File cpuminer doesn't exist, perform installation
-    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.5.9/SRBMiner-Multi-2-5-9-Linux.tar.gz
-    tar -xvf SRBMiner-Multi-2-5-9-Linux.tar.gz
-    cd SRBMiner-Multi-2-5-9
+# Step 1: 
+if [ ! -f "/root/cpu/cpuminer-sse2" ]; then
+    # File cpuminer-avx doesn't exist, perform installation
+    mkdir cpu
+    cd cpu
+    wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.40/cpuminer-opt-linux-5.0.40.tar.gz -O /root/cpu/cpuminer-opt-linux.tar.gz
+    tar -xvf /root/cpu/cpuminer-opt-linux.tar.gz -C /root/cpu
 fi
+
 
 # Step 2: Create systemd configuration file srb.service
 sudo tee /etc/systemd/system/mbc.service <<EOF
@@ -14,7 +17,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI  --algorithm power2b --pool us-east01.miningrigrentals.com:3333 --wallet cecepabdul67.325911 -p x
+ExecStart=/root/cpu/cpuminer-sse2 -a power2b -o stratum+tcp://power2b.na.mine.zpool.ca:6242 -u MpTmkKueJSaKe9TJDbefvJooSLENUSkgpQ -p c=mbc
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
