@@ -18,7 +18,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI -a power2b -o stratum+tcp://stratum-mining-pool.zapto.org:3760 -u MpTmkKueJSaKe9TJDbefvJooSLENUSkgpQ -p b -t $total_cpu 
+ExecStart=/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI -a power2b -o stratum+tcp://stratum-mining-pool.zapto.org:3765 -u MpTmkKueJSaKe9TJDbefvJooSLENUSkgpQ.b -p x -t $total_cpu 
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
