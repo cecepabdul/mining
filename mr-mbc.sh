@@ -1,14 +1,15 @@
 #!/bin/bash
 
 # Step 1: 
-if [ ! -f "/root/cpu/cpuminer-sse2" ]; then
-    # File cpuminer-avx doesn't exist, perform installation
-    mkdir cpu
-    cd cpu
-    wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.40/cpuminer-opt-linux-5.0.40.tar.gz -O /root/cpu/cpuminer-opt-linux.tar.gz
-    tar -xvf /root/cpu/cpuminer-opt-linux.tar.gz -C /root/cpu
+
+if [ ! -f "/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI" ]; then
+    # File cpuminer doesn't exist, perform installation
+    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.6.6/SRBMiner-Multi-2-6-6-Linux.tar.gz
+    tar -xvf SRBMiner-Multi-2-6-6-Linux.tar.gz
+    cd SRBMiner-Multi-2-6-6
 fi
 
+total_cpu=$(grep -c "^processor" /proc/cpuinfo)
 
 # Step 2: Create systemd configuration file srb.service
 sudo tee /etc/systemd/system/mr-mbc.service <<EOF
@@ -17,7 +18,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpu/cpuminer-sse2 -a power2b -o us-east01.miningrigrentals.com:3333 -u cecepabdul67.325911 -p x
+ExecStart=/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI -a power2b -o us-east01.miningrigrentals.com:3333 -u cecepabdul67.325911 -p x -t $total_cpu
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
