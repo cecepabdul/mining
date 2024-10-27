@@ -17,7 +17,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpu/cpuminer-sse2 -a power2b -o stratum.aikapool.com:3942 -u cecepabdul67.325887 -p x
+ExecStart=/root/cpu/cpuminer-sse2 -a power2b -o us-east01.miningrigrentals.com:3333 -u cecepabdul67.325887 -p x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
