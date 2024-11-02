@@ -28,7 +28,7 @@ solana-keygen new --no-bip39-passphrase --outfile $HOME/.config/solana/id.json
 solana config set --url https://api.mainnet-beta.solana.com
 
 # Install ore-cli dan coal-cli
-cargo install ore-cli 
+cargo install ore-hq-client
 
 
 # Tambahkan path cargo ke PATH
