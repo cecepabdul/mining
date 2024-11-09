@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Nama atau PID dari proses qubic
-QUBIC_NAME="cpu_avx2_tra"  # ganti dengan nama atau PID aplikasi Qubic
+QUBIC_NAME="cpu_avx2_traine"  # ganti dengan nama atau PID aplikasi Qubic
 CPU_THRESHOLD=10  # Batas persentase CPU untuk idle (misalnya 10%)
 CHECK_INTERVAL=60  # Interval waktu pengecekan dalam detik
 
