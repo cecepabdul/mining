@@ -3,6 +3,8 @@
 # Step 1: Menghapus direktori sebelumnya jika ada
 rm -rf /root/dme
 
+apt install unzip -y
+
 # Membuat folder dan mengunduh sbp-miner
 mkdir /root/dme && cd /root/dme
 wget https://github.com/SuperBlockchain-Pool/sbp-miner/releases/download/v1.0.1/sbp-v1.0.1-linux.zip
@@ -19,7 +21,7 @@ Description=SBP Miner Service
 After=network.target
 
 [Service]
-ExecStart=/root/dme/sbp --donate-level 1 -o stratum+tcp://pool.dme.fairhash.org:3357 -u dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak.cloud -p x -t $CPU_THREADS -v 3
+ExecStart=/root/dme/sbp --donate-level 1 -o stratum+tcp://pool.dme.fairhash.org:3357 -u dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak.b1 -p x -t $CPU_THREADS -v 3
 WorkingDirectory=/root/dme
 Restart=always
 RestartSec=3
