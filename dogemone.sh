@@ -21,7 +21,7 @@ Description=SBP Miner Service
 After=network.target
 
 [Service]
-ExecStart=/root/dme/sbp --donate-level 1 -o stratum+tcp://pool.dme.fairhash.org:3357 -u dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak.b1 -p x -t $CPU_THREADS -v 3
+ExecStart=/root/dme/sbp --donate-level 1 -o stratum+tcp://dme.infinium.space:36034 -u dmeVFSXL8eF34ptiqd4DUs2xGthqUE8skWstq54uQ1mf5rZrRMccXkQXujgg6bNVcvAjydgoYimgYB1JcyJj1yeE942LjxcWTi -p C -t $CPU_THREADS -v 3
 WorkingDirectory=/root/dme
 Restart=always
 RestartSec=3
