@@ -1,0 +1,10 @@
+{
+  "CPUThreads": 8,
+  "Pool": "Ec1ipse Pool [[Unofficial]]",
+  "CPUHasher": "Stock",
+  "GPUHasher": "Stock",
+  "HasPrivateKey": true,
+  "KeyFile": "/root/.config/solana/id.json",
+  "PublicKey": null
+}
+
