@@ -12,7 +12,7 @@ while true; do
     if [ -z "$CPU_USAGE" ]; then
         echo "Proses Qubic tidak ditemukan."
         # Jika Qubic tidak berjalan, pastikan SRB berjalan
-        pgrep -f SRBMiner-MULTI > /dev/null || /root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI  --disable-gpu --algorithm minotaurx --pool stratum+tcp://fastpool.xyz:6001 --wallet solo:MLegX9RugBiRMpJjmENLZEtnoPtGrF7o1h@barex --password x &
+        pgrep -f SRBMiner-MULTI > /dev/null || /root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI  --disable-gpu -a power2b -o us-east01.miningrigrentals.com:3333 -u cecepabdul67.325911 -p x &
     elif (( $(echo "$CPU_USAGE > $CPU_THRESHOLD" | bc -l) )); then
         echo "Qubic sedang aktif (CPU: $CPU_USAGE%), menghentikan SRB."
         # Hentikan SRB jika berjalan
@@ -20,7 +20,7 @@ while true; do
     else
         echo "Qubic sedang idle (CPU: $CPU_USAGE%), menjalankan SRB."
         # Jika Qubic idle, jalankan SRB jika belum berjalan
-        pgrep -f SRBMiner-MULTI > /dev/null || /root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI  --disable-gpu --algorithm minotaurx --pool stratum+tcp://fastpool.xyz:6001 --wallet solo:MLegX9RugBiRMpJjmENLZEtnoPtGrF7o1h@barex --password x &
+        pgrep -f SRBMiner-MULTI > /dev/null || /root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI  --disable-gpu -a power2b -o us-east01.miningrigrentals.com:3333 -u cecepabdul67.325911 -p x &
     fi
 
     # Tunggu sebelum pengecekan berikutnya
