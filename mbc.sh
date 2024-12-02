@@ -11,13 +11,13 @@ fi
 
 
 # Step 2: Create systemd configuration file srb.service
-sudo tee /etc/systemd/system/mr-mbc.service <<EOF
+sudo tee /etc/systemd/system/mbc.service <<EOF
 [Unit]
 Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpu/cpuminer-sse2 -a power2b -o us-east01.miningrigrentals.com:3333 -u cecepabdul67.325911 -p x
+ExecStart=/root/cpu/cpuminer-sse2 -a power2b -o stratum+tcp://power2b.mine.zergpool.com:7445 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=MBC
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
@@ -34,10 +34,10 @@ sudo chmod 644 /etc/systemd/system/mbc.service
 sudo systemctl daemon-reload
 
 # Step 5: Start the srb service
-sudo systemctl start mr-mbc.service
+sudo systemctl start mbc.service
 
 # Wait for 10 seconds
 sleep 10
 
 # Check the status of the srb service
-journalctl -f -u mr-mbc.service
+journalctl -f -u mbc.service
