@@ -17,7 +17,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpu/cpuminer-sse2 -a power2b -o stratum+tcp://power2b.na.mine.zpool.ca:6242 -u MpTmkKueJSaKe9TJDbefvJooSLENUSkgpQ -p c=mbc
+ExecStart=/root/cpu/cpuminer-sse2 -a power2b -o us-east01.miningrigrentals.com:3333 -u cecepabdul67.325911 -p x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
