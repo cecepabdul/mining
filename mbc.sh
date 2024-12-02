@@ -11,7 +11,7 @@ fi
 
 
 # Step 2: Create systemd configuration file srb.service
-sudo tee /etc/systemd/system/mbc.service <<EOF
+sudo tee /etc/systemd/system/mr-mbc.service <<EOF
 [Unit]
 Description=SRBMiner-MULTI Service
 After=network.target
@@ -34,10 +34,10 @@ sudo chmod 644 /etc/systemd/system/mbc.service
 sudo systemctl daemon-reload
 
 # Step 5: Start the srb service
-sudo systemctl start mbc
+sudo systemctl start mr-mbc.service
 
 # Wait for 10 seconds
 sleep 10
 
 # Check the status of the srb service
-journalctl -f -u mbc
+journalctl -f -u mr-mbc.service
