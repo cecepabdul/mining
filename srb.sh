@@ -12,7 +12,7 @@ while true; do
         # Jalankan SRBMiner jika tidak ada proses rqiner
         if ! pgrep -f SRBMiner-MULTI > /dev/null; then
             echo "Menjalankan SRBMiner..."
-            /root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI --disable-gpu -a power2b -o stratum+tcp://stratum-mining-pool.zapto.org:3765 -u mbc1q4978y635chz7rk8uhwd9sm9vmzq3z657wmrd5w -p x &
+            /root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI --disable-gpu -a yespowersugar -o stratum+tcp://yespowerSUGAR.mine.zergpool.com:6535 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=SUGAR &
         fi
     else
         # Ambil nilai CPU menggunakan `top`
@@ -25,7 +25,7 @@ while true; do
             echo "Qubic sedang idle (CPU: $CPU_USAGE%), menjalankan SRB."
             if ! pgrep -f SRBMiner-MULTI > /dev/null; then
                 echo "Menjalankan SRBMiner..."
-                /root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI --disable-gpu -a power2b -o stratum+tcp://stratum-mining-pool.zapto.org:3765 -u mbc1q4978y635chz7rk8uhwd9sm9vmzq3z657wmrd5w -p x &
+                /root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI --disable-gpu -a yespowersugar -o stratum+tcp://yespowerSUGAR.mine.zergpool.com:6535 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=SUGAR &
             fi
         fi
     fi
