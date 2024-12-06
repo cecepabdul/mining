@@ -10,9 +10,9 @@ while true; do
     if [ -z "$QUBIC_PID" ]; then
         echo "Proses $QUBIC_NAME tidak ditemukan."
         # Jalankan SRBMiner jika tidak ada proses rqiner
-        if ! pgrep -f SRBMiner-MULTI > /dev/null; then
+        if ! pgrep -f cpuminer-sse2 > /dev/null; then
             echo "Menjalankan SRBMiner..."
-            /root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI --disable-gpu -a yespowersugar -o stratum+tcp://yespowerSUGAR.mine.zergpool.com:6535 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=SUGAR &
+            /root/cpu/cpuminer-sse2 -a power2b -o stratum+tcp://power2b.mine.zergpool.com:7445 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=MBC &
         fi
     else
         # Ambil nilai CPU menggunakan `top`
@@ -20,12 +20,12 @@ while true; do
         
         if (( $(echo "$CPU_USAGE > $CPU_THRESHOLD" | bc -l) )); then
             echo "Qubic sedang aktif (CPU: $CPU_USAGE%), menghentikan SRB."
-            pkill -f SRBMiner-MULTI
+            pkill -f cpuminer-sse2
         else
             echo "Qubic sedang idle (CPU: $CPU_USAGE%), menjalankan SRB."
-            if ! pgrep -f SRBMiner-MULTI > /dev/null; then
+            if ! pgrep -f cpuminer-sse2 > /dev/null; then
                 echo "Menjalankan SRBMiner..."
-                /root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI --disable-gpu -a yespowersugar -o stratum+tcp://yespowerSUGAR.mine.zergpool.com:6535 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=SUGAR &
+                /root/cpu/cpuminer-sse2 -a power2b -o stratum+tcp://power2b.mine.zergpool.com:7445 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=MBC &
             fi
         fi
     fi
