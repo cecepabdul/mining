@@ -16,7 +16,7 @@ stop_monitoring() {
 # Fungsi untuk memantau log Qubic
 monitor_qubic() {
     echo "Memantau output Qubic..."
-    docker logs -f "$QUBIC_NAME" &
+    docker logs -f qubic &
     MONITOR_PID=$!
 }
 
