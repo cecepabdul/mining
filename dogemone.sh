@@ -39,5 +39,3 @@ sudo systemctl start dogemone.service
 # Tunggu beberapa detik untuk memastikan layanan berjalan
 sleep 5
 
-# Menampilkan log untuk memastikan tidak ada error
-journalctl -f -u dogemone.service
