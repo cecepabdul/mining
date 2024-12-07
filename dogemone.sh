@@ -3,7 +3,7 @@
 # Step 1: Menghapus direktori sebelumnya jika ada
 rm -rf /root/dme
 
-apt install unzip -y
+apt install unzip bc -y
 
 # Membuat folder dan mengunduh sbp-miner
 mkdir /root/dme && cd /root/dme
