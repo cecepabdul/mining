@@ -3,28 +3,22 @@
 QUBIC_NAME="rqiner"  # Nama proses
 CPU_THRESHOLD=10     # Batas penggunaan CPU untuk idle
 CHECK_INTERVAL=60    # Interval pengecekan dalam detik
+SYSTEMD_NAME="sugar"  # Nama layanan dogemone
 
-# Fungsi untuk menghentikan pemantauan jika sudah berjalan
-stop_monitoring() {
-    if [[ -n "$MONITOR_PID" ]]; then
-        echo "Menghentikan pemantauan output (PID: $MONITOR_PID)..."
-        kill "$MONITOR_PID" 2>/dev/null
-        unset MONITOR_PID
+# Fungsi untuk memulai dogemone
+start_dogemone() {
+    if ! systemctl is-active --quiet "$SYSTEMD_NAME"; then
+        echo "Menjalankan $SYSTEMD_NAME..."
+        systemctl start "$SYSTEMD_NAME"
     fi
 }
 
-# Fungsi untuk memantau log Qubic
-monitor_qubic() {
-    echo "Memantau output Qubic..."
-    docker logs -f qubic &
-    MONITOR_PID=$!
-}
-
-# Fungsi untuk memantau log dogemone
-monitor_dogemone() {
-    echo "Memantau output dogemone..."
-    journalctl -f -u dogemone &
-    MONITOR_PID=$!
+# Fungsi untuk menghentikan dogemone
+stop_dogemone() {
+    if systemctl is-active --quiet "$SYSTEMD_NAME"; then
+        echo "Menghentikan $SYSTEMD_NAME..."
+        systemctl stop "$SYSTEMD_NAME"
+    fi
 }
 
 while true; do
@@ -33,35 +27,17 @@ while true; do
     if [ -z "$QUBIC_PID" ]; then
         echo "Proses $QUBIC_NAME tidak ditemukan."
         # Jalankan dogemone jika tidak ada proses rqiner
-        if ! systemctl is-active --quiet dogemone; then
-            echo "Menjalankan dogemone..."
-            systemctl start dogemone
-        fi
-        
-        # Ganti pemantauan ke dogemone
-        stop_monitoring
-        monitor_dogemone
+        start_dogemone
     else
         # Ambil nilai CPU menggunakan `top`
         CPU_USAGE=$(top -b -n 1 -p "$QUBIC_PID" | awk -v pid="$QUBIC_PID" '$1 == pid {print $9}')
         
         if (( $(echo "$CPU_USAGE > $CPU_THRESHOLD" | bc -l) )); then
-            echo "Qubic sedang aktif (CPU: $CPU_USAGE%), menghentikan dogemone."
-            systemctl stop dogemone
-            
-            # Ganti pemantauan ke Qubic
-            stop_monitoring
-            monitor_qubic
+            echo "$QUBIC_NAME sedang aktif (CPU: $CPU_USAGE%), menghentikan $SYSTEMD_NAME."
+            stop_dogemone
         else
-            echo "Qubic sedang idle (CPU: $CPU_USAGE%), menjalankan dogemone."
-            if ! systemctl is-active --quiet dogemone; then
-                echo "Menjalankan dogemone..."
-                systemctl start dogemone
-            fi
-            
-            # Ganti pemantauan ke dogemone
-            stop_monitoring
-            monitor_dogemone
+            echo "$QUBIC_NAME sedang idle (CPU: $CPU_USAGE%), menjalankan $SYSTEMD_NAME."
+            start_dogemone
         fi
     fi
     
