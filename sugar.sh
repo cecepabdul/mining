@@ -1,13 +1,12 @@
 #!/bin/bash
 
-rm -rf cpuminer
-mkdir cpuminer
-cd cpuminer
 
-if [ ! -f "/root/cpuminer/cpuminer" ]; then
-    # File cpuminer doesn't exist, perform installation
-    wget https://github.com/cpu-pool/cpuminer-opt-cpupower/releases/download/1.4/Cpuminer-opt-cpu-pool-linux64.tar.gz && tar -xvf Cpuminer-opt-cpu-pool-linux64.tar.gz
-    chmod +x cpuminer
+if [ ! -f "/root/cpu/cpuminer-sse2" ]; then
+    # File cpuminer-avx doesn't exist, perform installation
+    mkdir cpu
+    cd cpu
+    wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.40/cpuminer-opt-linux-5.0.40.tar.gz -O /root/cpu/cpuminer-opt-linux.tar.gz
+    tar -xvf /root/cpu/cpuminer-opt-linux.tar.gz -C /root/cpu
 fi
 
 # Step 2: Create systemd configuration file srb.service
@@ -17,7 +16,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/cpuminer/cpuminer -a yespowersugar -o stratum+tcp://yespowerSUGAR.mine.zergpool.com:16535 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=SUGAR
+ExecStart=/root/cpu/cpuminer-sse2 -a yespowersugar -o stratum+tcp://yespowerSUGAR.mine.zergpool.com:6535 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj -p c=TRX,mc=SUGAR
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
