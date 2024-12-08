@@ -3,7 +3,7 @@
 QUBIC_NAME="rqiner"  # Nama proses
 CPU_THRESHOLD=10     # Batas penggunaan CPU untuk idle
 CHECK_INTERVAL=60    # Interval pengecekan dalam detik
-SYSTEMD_NAME="sugar"  # Nama layanan yang disesuaikan
+SYSTEMD_NAME="maza"  # Nama layanan yang disesuaikan
 
 # Fungsi untuk menghentikan pemantauan jika sudah berjalan
 stop_monitoring() {
@@ -17,7 +17,7 @@ stop_monitoring() {
 # Fungsi untuk memantau log Qubic
 monitor_qubic() {
     echo "Memantau output Qubic..."
-    docker logs -f qubic &
+    docker logs --tail 100 -f qubic &  # Hanya menampilkan 100 baris terakhir
     MONITOR_PID=$!
 }
 
