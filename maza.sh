@@ -29,12 +29,3 @@ sudo chmod 644 /etc/systemd/system/maza.service
 
 # Step 4: Reload systemd configuration
 sudo systemctl daemon-reload
-
-# Step 5: Start the srb service
-sudo systemctl start maza
-
-# Wait for 10 seconds
-sleep 10
-
-# Check the status of the srb service
-journalctl -f -u maza
