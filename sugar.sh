@@ -37,6 +37,3 @@ sudo systemctl start sugar.service
 
 # Wait for 10 seconds
 sleep 10
-
-# Check the status of the srb service
-journalctl -f -u sugar.service
