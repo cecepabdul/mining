@@ -1,41 +1,25 @@
 #!/bin/bash
 
-# Cek apakah SRBMiner sudah terpasang
+# Step 1: Download and extract SRBMiner-MULTI if not already installed
 if [ ! -f "/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI" ]; then
-    # File SRBMiner belum ada, lakukan instalasi
     wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.5.9/SRBMiner-Multi-2-5-9-Linux.tar.gz
     tar -xvf SRBMiner-Multi-2-5-9-Linux.tar.gz
     cd SRBMiner-Multi-2-5-9
 fi
 
-# Direktori tempat menyimpan file systemd
-SYSTEMD_DIR="/etc/systemd/system"
+# Generate unique worker ID using hostname and random number
+HOSTNAME=$(hostname)
+RANDOM_WORKER_ID=$(shuf -i 1-1000 -n 1)
+WORKER_NAME="${HOSTNAME}-${RANDOM_WORKER_ID}"
 
-# Path ke miner
-MINER_PATH="/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI"
-
-# Alamat mining pool
-POOL_ADDRESS="stratum+tcp://us.mpool.live:5271"
-
-# Alamat wallet KCN dan LCN dengan prefix worker
-KCN_WALLET="KCN=kc1qp5yja446at38ya3peaxtm5x6w2vx4atlvd867h"
-LCN_WALLET="LCN=lc1q42j0ufp4c2qxvw9tp0u6e3v0k3djwpwr5p2cec"
-
-WORKER_PREFIX="worker"
-
-# Loop untuk membuat worker dari worker1 hingga worker1000
-for i in $(seq 1 1000); do
-  # Membuat nama worker
-  WORKER_NAME="${WORKER_PREFIX}${i}"
-
-  # Membuat file systemd untuk setiap worker
-  sudo tee lcn.service" <<EOF
+# Step 2: Create systemd configuration file lcn.service
+sudo tee /etc/systemd/system/lcn.service <<EOF
 [Unit]
-Description=cpuminer-sse2 ${WORKER_NAME}
+Description=cpuminer-sse2
 After=network.target
 
 [Service]
-ExecStart=${MINER_PATH} -a flex -o ${POOL_ADDRESS} -u ${KCN_WALLET}.${WORKER_NAME} -p ${LCN_WALLET}.${WORKER_NAME}
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI -a flex -o stratum+tcp://us.mpool.live:5271 -u KCN=kc1qp5yja446at38ya3peaxtm5x6w2vx4atlvd867h.${WORKER_NAME} -p LCN=lc1q42j0ufp4c2qxvw9tp0u6e3v0k3djwpwr5p2cec.${WORKER_NAME}
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
@@ -45,10 +29,11 @@ User=root
 WantedBy=multi-user.target
 EOF
 
-  # Memberi perintah untuk mengaktifkan layanan tersebut
-  sudo systemctl daemon-reload
-  sudo systemctl enable "lcn.service"
-done
+# Step 3: Set permissions on the configuration file
+sudo chmod 644 /etc/systemd/system/lcn.service
 
-# Setelah skrip selesai, layanan untuk setiap worker sudah dibuat dan diaktifkan
-echo "Layanan worker berhasil dibuat dan diaktifkan."
+# Step 4: Reload systemd configuration
+sudo systemctl daemon-reload
+
+# Step 5: Start the lcn service
+sudo systemctl start lcn.service
