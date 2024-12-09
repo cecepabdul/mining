@@ -33,9 +33,3 @@ sudo systemctl daemon-reload
 
 # Step 5: Start the srb service
 sudo systemctl start lcn.service
-
-# Wait for 10 seconds
-sleep 10
-
-# Check the status of the srb service
-journalctl -f -u lcn.service
