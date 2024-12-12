@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ ! -f "/root/qubic/qpro-miner" ]; then
+    mkdir qubic && cd qubic
+    wget https://dl.qubicmine.pro/qpro-miner;
+    chmod +x qpro-miner
+fi
+
+
 if [ ! -f "/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI" ]; then
     # File cpuminer doesn't exist, perform installation
     wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.6.6/SRBMiner-Multi-2-6-6-Linux.tar.gz
@@ -7,13 +14,6 @@ if [ ! -f "/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI" ]; then
     cd SRBMiner-Multi-2-6-6
 fi
 
-cd ..
-
-if [ ! -f "/root/qubic/qpro-miner" ]; then
-    mkdir qubic && cd qubic
-    wget https://dl.qubicmine.pro/qpro-miner;
-    chmod +x qpro-miner
-fi
 
 #-----------
 total_cpu=$(grep -c "^processor" /proc/cpuinfo)
