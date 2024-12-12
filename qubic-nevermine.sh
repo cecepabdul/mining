@@ -7,6 +7,8 @@ if [ ! -f "/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI" ]; then
     cd SRBMiner-Multi-2-6-6
 fi
 
+cd ..
+
 if [ ! -f "/root/qubic/qpro-miner" ]; then
     mkdir qubic && cd qubic
     wget https://dl.qubicmine.pro/qpro-miner;
