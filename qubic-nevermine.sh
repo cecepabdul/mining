@@ -10,9 +10,9 @@ fi
 
 # Periksa SRBMiner-MULTI
 if [ ! -f "/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI" ]; then
-    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.6.6/SRBMiner-Multi-2-6-6-Linux.tar.gz
+    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.6.6/SRBMiner-Multi-2-6-6-Linux.tar.gz -P /root
+    cd /root
     tar -xvf SRBMiner-Multi-2-6-6-Linux.tar.gz
-    cd SRBMiner-Multi-2-6-6
 fi
 
 
