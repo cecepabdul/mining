@@ -1,14 +1,15 @@
 #!/bin/bash
 
+# Periksa qpro-miner
 if [ ! -f "/root/qubic/qpro-miner" ]; then
-    mkdir qubic && cd qubic
-    wget https://dl.qubicmine.pro/qpro-miner;
+    mkdir -p /root/qubic  # Buat direktori qubic jika belum ada
+    cd /root/qubic
+    wget https://dl.qubicmine.pro/qpro-miner
     chmod +x qpro-miner
 fi
 
-
+# Periksa SRBMiner-MULTI
 if [ ! -f "/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI" ]; then
-    # File cpuminer doesn't exist, perform installation
     wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.6.6/SRBMiner-Multi-2-6-6-Linux.tar.gz
     tar -xvf SRBMiner-Multi-2-6-6-Linux.tar.gz
     cd SRBMiner-Multi-2-6-6
