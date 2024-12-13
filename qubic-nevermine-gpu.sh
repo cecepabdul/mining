@@ -14,7 +14,7 @@ fi
 run_miner_1() {
     while true; do
         echo "Starting Miner 1..."
-        ./qpro-miner --gpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker gpu --url ws.qubicmine.pro --idle "/root/gpool --pubkey BZH6iXi4NrtJseFa4jwLGiB17hMkD7i6jydqxq1TG1XL --no-pcie --no-cpu"
+        ./qpro-miner --gpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker gpu --url ws.qubicmine.pro --idle "/root/gpool --pubkey BZH6iXi4NrtJseFa4jwLGiB17hMkD7i6jydqxq1TG1XL --no-pcie"
         echo "Miner 1 terminated. Restarting in 5 seconds..."
         sleep 5
     done
