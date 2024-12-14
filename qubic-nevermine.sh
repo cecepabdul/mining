@@ -28,7 +28,7 @@ Description=qubic
 After=network.target
 
 [Service]
-ExecStart=/root/qubic/qpro-miner --cpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker b --url ws.qubicmine.pro --idle "/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI --disable-gpu --algorithm minotaurx --pool stratum+tcp://us.fastpool.xyz:6001 --wallet solo:MLegX9RugBiRMpJjmENLZEtnoPtGrF7o1h --password x"
+ExecStart=/root/qubic/qpro-miner --cpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker cloud --url ws.qubicmine.pro --idle "/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI --disable-gpu --algorithm minotaurx --pool stratum+tcp://us.fastpool.xyz:6001 --wallet solo:MLegX9RugBiRMpJjmENLZEtnoPtGrF7o1h --password x"
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
