@@ -13,8 +13,8 @@ Description=qubic
 After=network.target
 
 [Service]
-ExecStart=/root/minerlab/./qli-Client
-WorkingDirectory=/root
+ExecStart=/root/minerlab/qli-Client
+WorkingDirectory=/root/minerlab/
 Restart=always
 RestartSec=3
 User=root
