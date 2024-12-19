@@ -1,4 +1,4 @@
-sudo systemctl stop nevermine.service
+#!/bin/bash
 
 
 CPU_THREADS=$(nproc)
