@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-total_cpu=$(grep -c "^processor" /proc/cpuinfo)
+total_cpu=$(nproc)
 
 sudo tee /root/minerlab/appsettings.json 
 {
