@@ -1,18 +1,7 @@
 #!/bin/bash
 
 
-if [ ! -f "/root/dme/sbp" ]; then
-
-   mkdir /root/dme && cd /root/dme
-   wget https://github.com/SuperBlockchain-Pool/sbp-miner/releases/download/v1.0.1/sbp-v1.0.1-linux.zip
-   unzip sbp-v1.0.1-linux.zip
-   chmod +x sbp
-fi
-
-
 total_cpu=$(grep -c "^processor" /proc/cpuinfo)
-
-
 
 sudo tee /root/minerlab/appsettings.json 
 {
