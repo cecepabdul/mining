@@ -1,12 +1,15 @@
 sudo systemctl stop nevermine.service
 
+
+CPU_THREADS=$(nproc)
+
 sudo tee /etc/systemd/system/nevermine.service <<EOF
 [Unit]
 Description=qubic
 After=network.target
 
 [Service]
-ExecStart=/root/qubic/qpro-miner --cpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker cloud --url ws.qubicmine.pro --idle "/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI --disable-gpu --algorithm yespowertide --pool stratum+tcps://stratum-na.rplant.xyz:17059 --wallet TYj2cUrnoX7snkiTnpWHRKYCRZNAczZXFR.cloud --password x"
+ExecStart=/root/qubic/qpro-miner --cpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker cloud --url ws.qubicmine.pro --idle "/root/dme/sbp --donate-level 1 -o stratum+tcp://pool.dme.fairhash.org:3357 -u dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak -p x -t $CPU_THREADS -v 3"
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
