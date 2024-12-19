@@ -1,8 +1,5 @@
 #!/bin/bash
 
-apt install unzip -y
-
-
 
 if [ ! -f "/root/dme/sbp" ]; then
 
