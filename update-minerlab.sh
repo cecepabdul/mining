@@ -1,9 +1,10 @@
 #!/bin/bash
 
+# Get the total number of CPU cores
+total_cpu=$(grep -c "^processor" /proc/cpuinfo)
 
-total_cpu=$(nproc)
-
-sudo tee /root/minerlab/appsettings.json 
+# Create the appsettings.json file with the content
+sudo tee /root/minerlab/appsettings.json <<EOF
 {
   "ClientSettings": {
     "poolAddress": "wss://pps.minerlab.io/ws/CECEPABDUL",
@@ -18,10 +19,9 @@ sudo tee /root/minerlab/appsettings.json
     "displayDetailedHashrates": true,
     "pps": true,
     "idling": {
-       "command": "/root/dme/sbp",
-       "arguments": "--donate-level 1 -o stratum+tcp://pool.dme.fairhash.org:3357 -u dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak -p x -t $total_cpu -v 3"
+      "command": "/root/dme/sbp",
+      "arguments": "--donate-level 1 -o stratum+tcp://pool.dme.fairhash.org:3357 -u dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak -p x -t $total_cpu -v 3"
     }
   }
 }
-
 EOF
