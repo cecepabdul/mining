@@ -8,7 +8,7 @@ Description=qubic
 After=network.target
 
 [Service]
-ExecStart=/root/qubic/qpro-miner --cpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker cloud --url ws.qubicmine.pro --idle "/root/app/ohc --keypair id.json mine --threads $CPU_THREADS"
+ExecStart=/root/qubic/qpro-miner --cpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker cloud --url ws.qubicmine.pro --idle "docker start hq-client"
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
