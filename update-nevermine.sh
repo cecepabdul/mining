@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 CPU_THREADS=$(nproc)
 
 sudo tee /etc/systemd/system/nevermine.service <<EOF
@@ -9,7 +8,7 @@ Description=qubic
 After=network.target
 
 [Service]
-ExecStart=/root/qubic/qpro-miner --cpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker cloud --url ws.qubicmine.pro --idle "/root/dme/sbp --donate-level 1 -o stratum+tcp://pool.dme.fairhash.org:3357 -u dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak -p x -t $CPU_THREADS -v 3"
+ExecStart=/root/qubic/qpro-miner --cpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker cloud --url ws.qubicmine.pro --idle "/root/app/ohc --keypair id.json mine --threads $CPU_THREADS"
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
