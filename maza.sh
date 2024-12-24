@@ -29,3 +29,8 @@ sudo chmod 644 /etc/systemd/system/maza.service
 
 # Step 4: Reload systemd configuration
 sudo systemctl daemon-reload
+
+
+sudo systemctl start maza
+
+journalctl -f -u maza
