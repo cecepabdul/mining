@@ -37,4 +37,4 @@ sudo systemctl start eti.service
 sleep 10
 
 # 
-sudo systemctl status eti.service
+journalctl -f -u eti.service
