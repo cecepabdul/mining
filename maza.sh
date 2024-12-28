@@ -14,7 +14,9 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI --disable-gpu --algorithm minotaurx --pool stratum+tcp://us.fastpool.xyz:6001 --wallet solo:MLuy1v4vkTL2tUbTHPkzNfAPMenQMkURvw@b --password x
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI --disable-gpu --algorithm minotaurx --pool stratum+tcp://eu.coinXpool.com:8243 --wallet solo:MLuy1v4vkTL2tUbTHPkzNfAPMenQMkURvw@b --password c=MAZA,m=solo
+
+
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
