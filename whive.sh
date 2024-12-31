@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI -a yespower -o stratum+tcp://stratum.aikapool.com:3933 -u cecepabdul.cloud -p x
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI -a yespower -o stratum+tcp://stratum.aikapool.com:3933 -u azi76.cloud -p x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
