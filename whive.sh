@@ -1,9 +1,10 @@
 #!/bin/bash
 
-if [ ! -f "/root/SRBMiner-Multi-2-7-4/SRBMiner-MULTI" ]; then
-    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.7.4/SRBMiner-Multi-2-7-4-Linux.tar.gz
-    tar -xvf SRBMiner-Multi-2-7-4-Linux.tar.gz
-    cd SRBMiner-Multi-2-7-4
+if [ ! -f "/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI" ]; then
+    # File cpuminer doesn't exist, perform installation
+    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.5.9/SRBMiner-Multi-2-5-9-Linux.tar.gz
+    tar -xvf SRBMiner-Multi-2-5-9-Linux.tar.gz
+    cd SRBMiner-Multi-2-5-9
 fi
 
 # Step 2: Create systemd configuration file srb.service
@@ -13,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-7-4/SRBMiner-MULTI -a yespower -o stratum+tcp://stratum.aikapool.com:3933 -u cecepabdul.cloud -p x
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI -a yespower -o stratum+tcp://stratum.aikapool.com:3933 -u cecepabdul.cloud -p x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
