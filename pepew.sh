@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f "/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI" ]; then
+if [ ! -f "/root/SRBMiner-Multi-2-7-4/SRBMiner-MULTI" ]; then
     # File cpuminer doesn't exist, perform installation
     wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.7.4/SRBMiner-Multi-2-7-4-Linux.tar.gz
     tar -xvf SRBMiner-Multi-2-7-4-Linux.tar.gz
