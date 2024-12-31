@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-7-4/SRBMiner-MULTI --disable-gpu --algorithm xelishashv2_pepew --pool stratum+tcp://us-cent.mining4people.com:14176 --wallet PRGbxfWBcVJ1Q1Tuinx6XhxExW2ME5JUat --password x
+ExecStart=/root/SRBMiner-Multi-2-7-4/SRBMiner-MULTI --disable-gpu --algorithm xelishashv2_pepew --pool stratum+tcp://us-cent.mining4people.com:4176 --wallet PRGbxfWBcVJ1Q1Tuinx6XhxExW2ME5JUat --password x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
