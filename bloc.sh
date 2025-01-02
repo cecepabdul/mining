@@ -8,7 +8,7 @@ if [ ! -f "/root/xmrig-6.7.0/xmrig" ]; then
 fi
 
 # 
-sudo tee /etc/systemd/system/zeph.service <<EOF
+sudo tee /etc/systemd/system/bloc.service <<EOF
 [Unit]
 Description=XMRig Service
 After=network.target
@@ -25,16 +25,16 @@ WantedBy=multi-user.target
 EOF
 
 # 
-sudo chmod 644 /etc/systemd/system/zeph.service
+sudo chmod 644 /etc/systemd/system/bloc.service
 
 # 
 sudo systemctl daemon-reload
 
 # 
-sudo systemctl start zeph
+sudo systemctl start bloc.service
 
 # 
 sleep 10
 
 # 
-sudo systemctl status zeph
+journalctl -fu bloc.service
