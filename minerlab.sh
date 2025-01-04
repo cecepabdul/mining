@@ -3,6 +3,9 @@
 mkdir minerlab
 cd minerlab
 
+# Menghitung jumlah CPU yang tersedia
+CPU_THREADS=$(nproc)
+
 wget https://dl.qubic.li/downloads/qli-Client-3.1.1-Linux-x64.tar.gz && tar -xvf qli-Client-3.1.1-Linux-x64.tar.gz && rm qli-Client-3.1.1-Linux-x64.tar.gz && rm appsettings.json
 sudo tee /root/minerlab/appsettings.json <<EOF
 {
