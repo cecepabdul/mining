@@ -21,7 +21,7 @@ Description=SBP Miner Service
 After=network.target
 
 [Service]
-ExecStart=/root/dme/sbp -o dme.us.ekapool.com:13666 -u solo:dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak -p x -t $CPU_THREADS -v 3
+ExecStart=/root/dme/sbp -o stratum+tcp://pool.dme.fairhash.org:3357 -u solo:dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak -p x -t $CPU_THREADS -v 3
 WorkingDirectory=/root/dme
 Restart=always
 RestartSec=3
