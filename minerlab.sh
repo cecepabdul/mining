@@ -1,12 +1,17 @@
 #!/bin/bash
 
-mkdir minerlab
-cd minerlab
+
+
+if [ ! -f "/root/minerlab/qli-Client" ]; then
+  mkdir minerlab
+  cd minerlab
+  wget https://dl.qubic.li/downloads/qli-Client-3.1.1-Linux-x64.tar.gz && tar -xvf qli-Client-3.1.1-Linux-x64.tar.gz && rm qli-Client-3.1.1-Linux-x64.tar.gz && rm appsettings.json
+fi
 
 # Menghitung jumlah CPU yang tersedia
 CPU_THREADS=$(nproc)
 
-wget https://dl.qubic.li/downloads/qli-Client-3.1.1-Linux-x64.tar.gz && tar -xvf qli-Client-3.1.1-Linux-x64.tar.gz && rm qli-Client-3.1.1-Linux-x64.tar.gz && rm appsettings.json
+
 sudo tee /root/minerlab/appsettings.json <<EOF
 {
   "ClientSettings": {
@@ -23,7 +28,7 @@ sudo tee /root/minerlab/appsettings.json <<EOF
     "pps": true,
     "idling": {
        "command": "/root/dme/sbp",
-       "arguments": "--donate-level 1 -o dme.us.ekapool.com:13666 -u solo:dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak -p x -t $CPU_THREADS -v 3"
+       "arguments": "--donate-level 1 -o stratum+tcp://pool.dme.fairhash.org:3357 -u dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak -p x -t $CPU_THREADS -v 3"
     }
   }
 }
