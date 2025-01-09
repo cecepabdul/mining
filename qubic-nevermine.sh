@@ -4,15 +4,16 @@
 if [ ! -f "/root/qubic/qpro-miner" ]; then
     mkdir -p /root/qubic  # Buat direktori qubic jika belum ada
     cd /root/qubic
-    wget https://dl.qubicmine.pro/qpro-miner
+    wget https://github.com/cecepabdul/mining/releases/download/new/qpro-miner
     chmod +x qpro-miner
 fi
 
 # Periksa SRBMiner-MULTI
-if [ ! -f "/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI" ]; then
-    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.6.6/SRBMiner-Multi-2-6-6-Linux.tar.gz -P /root
-    cd /root
-    tar -xvf SRBMiner-Multi-2-6-6-Linux.tar.gz
+if [ ! -f "/root/dme/sbp" ]; then
+    mkdir /root/dme && cd /root/dme
+    wget https://github.com/SuperBlockchain-Pool/sbp-miner/releases/download/v1.0.1/sbp-v1.0.1-linux.zip
+    unzip sbp-v1.0.1-linux.zip
+    chmod +x sbp
 fi
 
 
@@ -28,7 +29,7 @@ Description=qubic
 After=network.target
 
 [Service]
-ExecStart=/root/qubic/qpro-miner --cpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker cloud --url ws.qubicmine.pro --idle "/root/SRBMiner-Multi-2-6-6/SRBMiner-MULTI -a randomx -o us-us.0xpool.io:3333 -u 0x80AFA39159589A888e33d82e195BECc555e6AB83 -p cloud -t $total_cpu"
+ExecStart=/root/qubic/qpro-miner --cpu --wallet VHTDSWYLKHBYCAFESSZGSHABLOEDXZDQYYQZJXNXXAKHDDUJXQZFXQHCHONE --worker cloud --url ws.qubicmine.pro --idle "/root/dme/sbp --donate-level 1 -o stratum+tcp://pool.dme.fairhash.org:3357 -u dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak -p x -t $total_cpu -v 3"
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
