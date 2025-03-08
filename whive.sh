@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI --disable-gpu --algorithm yespower --pool stratum+tcp://206.189.2.17:3333 --wallet wv1q37nyx2v3fhec9m9swv279gxqax3x3fnguanuzm --password x
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI --disable-gpu --algorithm yespower --pool stratum+tcp://206.189.2.17:3333 --wallet wv1q37nyx2v3fhec9m9swv279gxqax3x3fnguanuzm --password x -t $(nproc)
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
