@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -f "/root/lfirig/build/lfirig" ]; then
-   sudo apt-get install git build-essential cmake automake libtool autoconf libhwloc-dev libuv1-dev -y
+   sudo apt-get install git build-essential cmake automake libtool autoconf libhwloc-dev libuv1-dev libssl-dev -y
    git clone https://github.com/LunifyProject/lfirig
    mkdir lfirig/build && cd lfirig/build
    cmake ..
