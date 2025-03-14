@@ -14,7 +14,7 @@ Description=XMRig Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig --donate-level 1 -o smartpool.goldi.ga:7272 -u 58ctgQB2rvbe7MyaNrS83e1Hq4RdmpkBAMkMJfZRnvLmMyAt8dJboTZ6cSedPBajFdAc1sY5oM5XVYjYmNEsjFesS13G29i -p x -a rx/0 -t 4"
+ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig --donate-level 1 -o smartpool.goldi.ga:7272 -u 58ctgQB2rvbe7MyaNrS83e1Hq4RdmpkBAMkMJfZRnvLmMyAt8dJboTZ6cSedPBajFdAc1sY5oM5XVYjYmNEsjFesS13G29i -p x -a rx/0"
 WorkingDirectory=/root/xmrig-6.7.0
 Restart=always
 RestartSec=3
