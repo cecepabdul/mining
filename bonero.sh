@@ -14,7 +14,7 @@ Description=XMRig Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig --url 162.253.42.14:3333 -u SEXTmoNF3T8VPZ5Y5iEuUS4jEiBVDAisLW1bzcj2t4dKRLmqBoc7hno4jrp8B2n7BUbSbYquJzuZzGoVey3jCJUu5TzC9zSs75 -p c"
+ExecStart=/bin/bash -c "cd /root/xmrig-6.7.0 && ./xmrig --url randomx.rplant.xyz:7139 -u SEXTmoNF3T8VPZ5Y5iEuUS4jEiBVDAisLW1bzcj2t4dKRLmqBoc7hno4jrp8B2n7BUbSbYquJzuZzGoVey3jCJUu5TzC9zSs75 -p c"
 WorkingDirectory=/root/xmrig-6.7.0
 Restart=always
 RestartSec=3
