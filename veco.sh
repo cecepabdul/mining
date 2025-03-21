@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI --disable-gpu --algorithm yespower --pool stratum+tcp://stratum.vecocoin.com:8602 --wallet VCLkyKSq2GeJXonqmVUBBAsv7CSwfWmv8K --password c=VECO,m=solo
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI --disable-gpu --algorithm yespower --pool stratum+tcp://americas.mining-dutch.nl:9986 --wallet cecepabdul.cloud --password x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
