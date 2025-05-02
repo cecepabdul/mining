@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f "/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI" ]; then
+if [ ! -f "/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI" ]; then
     # File cpuminer doesn't exist, perform installation
     wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.5.9/SRBMiner-Multi-2-5-9-Linux.tar.gz
     tar -xvf SRBMiner-Multi-2-5-9-Linux.tar.gz
@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-4-7/SRBMiner-MULTI --disable-gpu --algorithm minotaurx --pool stratum+tcp://162.253.42.21:3062 --wallet MSwVfQxBUWE2sSm19DV7jTivTTqRwHXnts --password x
+ExecStart=/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI --disable-gpu --algorithm minotaurx --pool stratum+tcp://162.253.42.21:3062 --wallet MSwVfQxBUWE2sSm19DV7jTivTTqRwHXnts --password x
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
