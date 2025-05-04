@@ -18,7 +18,7 @@ Description=kobrad
 After=network.target
 
 [Service]
-ExecStart=/root/kobrad-linux/kobrad --utxoindex
+ExecStart=/bin/bash -c '/root/kobrad-linux/kobrad --utxoindex >> /var/log/kobrad.log 2>&1'
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
@@ -33,6 +33,7 @@ EOF
 # Step 3: 
 sudo chmod 644 /etc/systemd/system/koda.service
 
+
 # Step 4:
 sudo systemctl daemon-reload
 
@@ -40,7 +41,8 @@ sudo systemctl daemon-reload
 sudo systemctl start koda.service
 
 # Wait for 10 seconds
-sleep 10
+sudo chmod 644 /var/log/kobrad.log
 
 # 
-journalctl -fu koda.service
+tail -f /var/log/kobrad.log
+
