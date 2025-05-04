@@ -12,6 +12,7 @@ wget https://github.com/kobradag/kobrad/releases/download/v1.0.3/kobrad-linux.zi
 
 
 # Step 2: 
+sudo tee /etc/systemd/system/koda.service <<EOF
 [Unit]
 Description=kobrad
 After=network.target
@@ -26,6 +27,7 @@ CPUQuota=75%
 
 [Install]
 WantedBy=multi-user.target
+EOF
 
 
 # Step 3: 
