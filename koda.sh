@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 sudo fallocate -l 16G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
@@ -11,7 +12,6 @@ wget https://github.com/kobradag/kobrad/releases/download/v1.0.3/kobrad-linux.zi
 
 
 # Step 2: 
-sudo tee /etc/systemd/system/koda.service <<EOF
 [Unit]
 Description=kobrad
 After=network.target
@@ -22,10 +22,11 @@ WorkingDirectory=/root
 Restart=always
 RestartSec=3
 User=root
+CPUQuota=75%
 
 [Install]
 WantedBy=multi-user.target
-EOF
+
 
 # Step 3: 
 sudo chmod 644 /etc/systemd/system/koda.service
