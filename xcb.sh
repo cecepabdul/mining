@@ -14,7 +14,7 @@ Description=SRBMiner-MULTI Service
 After=network.target
 
 [Service]
-ExecStart=/root/SRBMiner-Multi-2-8-5/SRBMiner-MULTI --disable-gpu --algorithm randomy --pool ca.luckypool.io:3118 --wallet cb567ce1c516e760df614d857b39a584461075a77a6b
+ExecStart=/root/SRBMiner-Multi-2-8-5/SRBMiner-MULTI --disable-gpu --algorithm randomy --pool ca.luckypool.io:3118 --wallet cb51058c77d0e2aae6fe9fe63f7126781c945255e1ce
 WorkingDirectory=/root
 Restart=always
 RestartSec=3
