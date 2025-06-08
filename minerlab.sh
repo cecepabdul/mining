@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+rm -f minerlab
 
 if [ ! -f "/root/minerlab/qli-Client" ]; then
   mkdir minerlab
@@ -27,8 +27,8 @@ sudo tee /root/minerlab/appsettings.json <<EOF
     "displayDetailedHashrates": true,
     "pps": true,
     "idling": {
-       "command": "/root/dme/sbp",
-       "arguments": "--donate-level 1 -o stratum+tcp://pool.dme.fairhash.org:3357 -u dmeUyLioqdQ8L2iVGfa9CiPkv86PJjhPQ1gywrnsRSvbWFdptYzTsjWSdmPuyVf9ijC91nHYmA31kesQ1ozZShBj3EdukbSwak -p x -t $CPU_THREADS -v 3"
+       "command": "/root/SRBMiner-Multi-2-5-9/SRBMiner-MULTI",
+       "arguments": "--algorithm minotaurx --pool us-east01.miningrigrentals.com:3333 --wallet cecepabdul67.321678 --password x"
     }
   }
 }
