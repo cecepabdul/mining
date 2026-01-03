@@ -1,36 +1,4 @@
 #!/bin/bash
-set -e
-
-### =========================
-### VALIDASI ARGUMENT
-### =========================
-MANAGER_IP="$1"
-SWARM_JOIN_TOKEN="$2"
-SWARM_ROLE="${3:-worker}"
-SWARM_MANAGER_PORT="2377"
-
-if [[ -z "$MANAGER_IP" || -z "$SWARM_JOIN_TOKEN" ]]; then
-  echo "❌ Usage:"
-  echo "  $0 <manager_ip> <join_token> [worker|manager]"
-  exit 1
-fi
-
-if [[ "$SWARM_ROLE" != "worker" && "$SWARM_ROLE" != "manager" ]]; then
-  echo "❌ Role harus 'worker' atau 'manager'"
-  exit 1
-fi
-
-### =========================
-### CEK ROOT
-### =========================
-if [[ "$EUID" -ne 0 ]]; then
-  echo "❌ Jalankan sebagai root"
-  exit 1
-fi
-
-echo "🚀 Install Docker + Join Swarm"
-echo "➡ Manager : $MANAGER_IP"
-echo "➡ Role    : $SWARM_ROLE"
 
 ### =========================
 ### UPDATE & DEPENDENCY
@@ -63,23 +31,3 @@ docker info >/dev/null 2>&1 || {
   echo "❌ Docker gagal dijalankan"
   exit 1
 }
-
-LOCAL_IP=$(ip route get 1 | awk '{print $7; exit}')
-
-echo "⏳ Menunggu network online..."
-until ip route get "$MANAGER_IP" >/dev/null 2>&1; do
-  sleep 2
-done
-
-echo "🔗 Join Swarm sebagai worker"
-echo "➡ Advertise IP: $LOCAL_IP"
-echo "➡ Manager IP  : $MANAGER_IP"
-
-docker swarm join \
-  --listen-addr 0.0.0.0:2377 \
-  --advertise-addr "$LOCAL_IP" \
-  --token "$SWARM_JOIN_TOKEN" \
-  "$MANAGER_IP:2377"
-  
-echo "🎉 Join Swarm berhasil!"
-docker info | grep "Swarm:"
