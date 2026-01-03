@@ -64,6 +64,16 @@ docker info >/dev/null 2>&1 || {
   exit 1
 }
 
+echo "⏳ Menunggu Docker siap..."
+for i in {1..10}; do
+  if docker info >/dev/null 2>&1; then
+    break
+  fi
+  sleep 2
+done
+
+
+
 ### =========================
 ### JOIN SWARM
 ### =========================
