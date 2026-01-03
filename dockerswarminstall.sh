@@ -64,31 +64,19 @@ docker info >/dev/null 2>&1 || {
   exit 1
 }
 
-echo "⏳ Menunggu Docker & network siap..."
-for i in {1..10}; do
-  docker info >/dev/null 2>&1 && break
+LOCAL_IP=$(ip route get 1 | awk '{print $7; exit}')
+
+echo "⏳ Menunggu network online..."
+until ip route get "$MANAGER_IP" >/dev/null 2>&1; do
   sleep 2
 done
 
-LOCAL_IP=$(ip route get 1 | awk '{print $7; exit}')
-
-echo "🔗 Join Swarm sebagai $SWARM_ROLE"
+echo "🔗 Join Swarm sebagai worker"
 echo "➡ Advertise IP: $LOCAL_IP"
-
-
-
-### =========================
-### JOIN SWARM
-### =========================
-if docker info | grep -q "Swarm: active"; then
-  echo "ℹ️ Node sudah tergabung dalam Swarm"
-  docker info | grep "Swarm:"
-  exit 0
-fi
-
-echo "🔗 Join Swarm sebagai $SWARM_ROLE..."
+echo "➡ Manager IP  : $MANAGER_IP"
 
 docker swarm join \
+  --listen-addr 0.0.0.0:2377 \
   --advertise-addr "$LOCAL_IP" \
   --token "$SWARM_JOIN_TOKEN" \
   "$MANAGER_IP:2377"
