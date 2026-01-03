@@ -89,8 +89,9 @@ fi
 echo "🔗 Join Swarm sebagai $SWARM_ROLE..."
 
 docker swarm join \
+  --advertise-addr "$LOCAL_IP" \
   --token "$SWARM_JOIN_TOKEN" \
-  "$MANAGER_IP:$SWARM_MANAGER_PORT"
-
+  "$MANAGER_IP:2377"
+  
 echo "🎉 Join Swarm berhasil!"
 docker info | grep "Swarm:"
