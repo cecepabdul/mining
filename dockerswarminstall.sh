@@ -64,13 +64,16 @@ docker info >/dev/null 2>&1 || {
   exit 1
 }
 
-echo "⏳ Menunggu Docker siap..."
+echo "⏳ Menunggu Docker & network siap..."
 for i in {1..10}; do
-  if docker info >/dev/null 2>&1; then
-    break
-  fi
+  docker info >/dev/null 2>&1 && break
   sleep 2
 done
+
+LOCAL_IP=$(ip route get 1 | awk '{print $7; exit}')
+
+echo "🔗 Join Swarm sebagai $SWARM_ROLE"
+echo "➡ Advertise IP: $LOCAL_IP"
 
 
 
